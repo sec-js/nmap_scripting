@@ -1,0 +1,6389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>smb NSE Library</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" >
+
+<!--#include virtual="/shared/templates/standard_body_top.html" -->
+
+<!--#include virtual="/shared/templates/nmap_header.html" -->
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<style type="text/css">
+.showbutton { text-size: smaller; display: none }
+.hidebutton { text-size: smaller; display: none }
+.jsvisible { display: none }
+</style>
+<script type="text/javascript">
+<!--
+document.write('<style type="text/css">\n\
+.showbutton { display: inline }\n\
+.contents { display: none }\n\
+.jsvisible { display: block }\n\
+.jsinvisible { display: none }\n\
+<\/style>');
+function show_contents(name) {
+	document.getElementById("show-" + name).style.display = "none";
+	document.getElementById("hide-" + name).style.display = "inline";
+	document.getElementById("contents-" + name).style.display = "block";
+}
+function hide_contents(name) {
+	document.getElementById("show-" + name).style.display = "inline";
+	document.getElementById("hide-" + name).style.display = "none";
+	document.getElementById("contents-" + name).style.display = "none";
+}
+function toggle_contents(name) {
+	elem = document.getElementById("contents-" + name)
+	if (elem.style.display == "block") {
+		hide_contents(name);
+	} else {
+		show_contents(name);
+	}
+}
+-->
+</script>
+
+<h1>NSEDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+	<li><a href="/book/nse.html">NSE Documentation</a></li>
+</ul>
+
+
+<!-- Category list -->
+<h1>Categories</h1>
+<ul>
+
+  
+  <li>
+    <a href="../categories/auth.html">
+      auth
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/broadcast.html">
+      broadcast
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/brute.html">
+      brute
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/default.html">
+      default
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/discovery.html">
+      discovery
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/dos.html">
+      dos
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/exploit.html">
+      exploit
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/external.html">
+      external
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/fuzzer.html">
+      fuzzer
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/intrusive.html">
+      intrusive
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/malware.html">
+      malware
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/safe.html">
+      safe
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/version.html">
+      version
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/vuln.html">
+      vuln
+    </a>
+  </li>
+  
+
+</ul>
+
+<!-- Script list -->
+
+<h1><span class="jsvisible"><a href="javascript:toggle_contents('scripts')">Scripts <span id="show-scripts" class="showbutton">(show 588)</span><span id="hide-scripts" class="hidebutton">(588)</span></a></span><span class="jsinvisible">Scripts (588)</span></h1>
+<ul id="contents-scripts" class="contents">
+
+	<li>
+		<a href="../scripts/acarsd-info.html">acarsd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/address-info.html">address-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-brute.html">afp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-ls.html">afp-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-path-vuln.html">afp-path-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-serverinfo.html">afp-serverinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-showmount.html">afp-showmount</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-auth.html">ajp-auth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-brute.html">ajp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-headers.html">ajp-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-methods.html">ajp-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-request.html">ajp-request</a>
+	</li>
+
+	<li>
+		<a href="../scripts/allseeingeye-info.html">allseeingeye-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/amqp-info.html">amqp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/asn-query.html">asn-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/auth-owners.html">auth-owners</a>
+	</li>
+
+	<li>
+		<a href="../scripts/auth-spoof.html">auth-spoof</a>
+	</li>
+
+	<li>
+		<a href="../scripts/backorifice-brute.html">backorifice-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/backorifice-info.html">backorifice-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bacnet-info.html">bacnet-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/banner.html">banner</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoin-getaddr.html">bitcoin-getaddr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoin-info.html">bitcoin-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoinrpc-info.html">bitcoinrpc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bittorrent-discovery.html">bittorrent-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bjnp-discover.html">bjnp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ataoe-discover.html">broadcast-ataoe-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-avahi-dos.html">broadcast-avahi-dos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-bjnp-discover.html">broadcast-bjnp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-db2-discover.html">broadcast-db2-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dhcp-discover.html">broadcast-dhcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dhcp6-discover.html">broadcast-dhcp6-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dns-service-discovery.html">broadcast-dns-service-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dropbox-listener.html">broadcast-dropbox-listener</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-eigrp-discovery.html">broadcast-eigrp-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-igmp-discovery.html">broadcast-igmp-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-listener.html">broadcast-listener</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ms-sql-discover.html">broadcast-ms-sql-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-netbios-master-browser.html">broadcast-netbios-master-browser</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-networker-discover.html">broadcast-networker-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-novell-locate.html">broadcast-novell-locate</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ospf2-discover.html">broadcast-ospf2-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pc-anywhere.html">broadcast-pc-anywhere</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pc-duo.html">broadcast-pc-duo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pim-discovery.html">broadcast-pim-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ping.html">broadcast-ping</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pppoe-discover.html">broadcast-pppoe-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-rip-discover.html">broadcast-rip-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ripng-discover.html">broadcast-ripng-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-sonicwall-discover.html">broadcast-sonicwall-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-sybase-asa-discover.html">broadcast-sybase-asa-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-tellstick-discover.html">broadcast-tellstick-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-upnp-info.html">broadcast-upnp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-versant-locate.html">broadcast-versant-locate</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wake-on-lan.html">broadcast-wake-on-lan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wpad-discover.html">broadcast-wpad-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wsdd-discover.html">broadcast-wsdd-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-xdmcp-discover.html">broadcast-xdmcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cassandra-brute.html">cassandra-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cassandra-info.html">cassandra-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cccam-version.html">cccam-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-enum.html">cics-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-info.html">cics-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-user-brute.html">cics-user-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-user-enum.html">cics-user-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-brute-xml.html">citrix-brute-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-apps.html">citrix-enum-apps</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-apps-xml.html">citrix-enum-apps-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-servers.html">citrix-enum-servers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-servers-xml.html">citrix-enum-servers-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/clamav-exec.html">clamav-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/clock-skew.html">clock-skew</a>
+	</li>
+
+	<li>
+		<a href="../scripts/coap-resources.html">coap-resources</a>
+	</li>
+
+	<li>
+		<a href="../scripts/couchdb-databases.html">couchdb-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/couchdb-stats.html">couchdb-stats</a>
+	</li>
+
+	<li>
+		<a href="../scripts/creds-summary.html">creds-summary</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cups-info.html">cups-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cups-queue-info.html">cups-queue-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cvs-brute.html">cvs-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cvs-brute-repository.html">cvs-brute-repository</a>
+	</li>
+
+	<li>
+		<a href="../scripts/daap-get-library.html">daap-get-library</a>
+	</li>
+
+	<li>
+		<a href="../scripts/daytime.html">daytime</a>
+	</li>
+
+	<li>
+		<a href="../scripts/db2-das-info.html">db2-das-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/deluge-rpc-brute.html">deluge-rpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dhcp-discover.html">dhcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dict-info.html">dict-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/distcc-cve2004-2687.html">distcc-cve2004-2687</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-blacklist.html">dns-blacklist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-brute.html">dns-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-cache-snoop.html">dns-cache-snoop</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-check-zone.html">dns-check-zone</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-client-subnet-scan.html">dns-client-subnet-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-fuzz.html">dns-fuzz</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-ip6-arpa-scan.html">dns-ip6-arpa-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsec-enum.html">dns-nsec-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsec3-enum.html">dns-nsec3-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsid.html">dns-nsid</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-random-srcport.html">dns-random-srcport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-random-txid.html">dns-random-txid</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-recursion.html">dns-recursion</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-service-discovery.html">dns-service-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-srv-enum.html">dns-srv-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-update.html">dns-update</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-zeustracker.html">dns-zeustracker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-zone-transfer.html">dns-zone-transfer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/docker-version.html">docker-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domcon-brute.html">domcon-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domcon-cmd.html">domcon-cmd</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domino-enum-users.html">domino-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dpap-brute.html">dpap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/drda-brute.html">drda-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/drda-info.html">drda-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/duplicates.html">duplicates</a>
+	</li>
+
+	<li>
+		<a href="../scripts/eap-info.html">eap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/enip-info.html">enip-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/epmd-info.html">epmd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/eppc-enum-processes.html">eppc-enum-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fcrdns.html">fcrdns</a>
+	</li>
+
+	<li>
+		<a href="../scripts/finger.html">finger</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fingerprint-strings.html">fingerprint-strings</a>
+	</li>
+
+	<li>
+		<a href="../scripts/firewalk.html">firewalk</a>
+	</li>
+
+	<li>
+		<a href="../scripts/firewall-bypass.html">firewall-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/flume-master-info.html">flume-master-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fox-info.html">fox-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/freelancer-info.html">freelancer-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-anon.html">ftp-anon</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-bounce.html">ftp-bounce</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-brute.html">ftp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-libopie.html">ftp-libopie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-proftpd-backdoor.html">ftp-proftpd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-syst.html">ftp-syst</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-vsftpd-backdoor.html">ftp-vsftpd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-vuln-cve2010-4221.html">ftp-vuln-cve2010-4221</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ganglia-info.html">ganglia-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/giop-info.html">giop-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gkrellm-info.html">gkrellm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gopher-ls.html">gopher-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gpsd-info.html">gpsd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-datanode-info.html">hadoop-datanode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-jobtracker-info.html">hadoop-jobtracker-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-namenode-info.html">hadoop-namenode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-secondary-namenode-info.html">hadoop-secondary-namenode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-tasktracker-info.html">hadoop-tasktracker-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hbase-master-info.html">hbase-master-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hbase-region-info.html">hbase-region-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hddtemp-info.html">hddtemp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hnap-info.html">hnap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-bfk.html">hostmap-bfk</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-crtsh.html">hostmap-crtsh</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-ip2hosts.html">hostmap-ip2hosts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-robtex.html">hostmap-robtex</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-adobe-coldfusion-apsa1301.html">http-adobe-coldfusion-apsa1301</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-affiliate-id.html">http-affiliate-id</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-apache-negotiation.html">http-apache-negotiation</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-apache-server-status.html">http-apache-server-status</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-aspnet-debug.html">http-aspnet-debug</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-auth.html">http-auth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-auth-finder.html">http-auth-finder</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-avaya-ipoffice-users.html">http-avaya-ipoffice-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-awstatstotals-exec.html">http-awstatstotals-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-axis2-dir-traversal.html">http-axis2-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-backup-finder.html">http-backup-finder</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-barracuda-dir-traversal.html">http-barracuda-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-bigip-cookie.html">http-bigip-cookie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-brute.html">http-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cakephp-version.html">http-cakephp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-chrono.html">http-chrono</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cisco-anyconnect.html">http-cisco-anyconnect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-coldfusion-subzero.html">http-coldfusion-subzero</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-comments-displayer.html">http-comments-displayer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-config-backup.html">http-config-backup</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cookie-flags.html">http-cookie-flags</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cors.html">http-cors</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cross-domain-policy.html">http-cross-domain-policy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-csrf.html">http-csrf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-date.html">http-date</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-default-accounts.html">http-default-accounts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-devframework.html">http-devframework</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-dlink-backdoor.html">http-dlink-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-dombased-xss.html">http-dombased-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-domino-enum-passwords.html">http-domino-enum-passwords</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-drupal-enum.html">http-drupal-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-drupal-enum-users.html">http-drupal-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-enum.html">http-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-errors.html">http-errors</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-exif-spider.html">http-exif-spider</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-favicon.html">http-favicon</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-feed.html">http-feed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-fetch.html">http-fetch</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-fileupload-exploiter.html">http-fileupload-exploiter</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-form-brute.html">http-form-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-form-fuzzer.html">http-form-fuzzer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-frontpage-login.html">http-frontpage-login</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-generator.html">http-generator</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-git.html">http-git</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-gitweb-projects-enum.html">http-gitweb-projects-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-google-malware.html">http-google-malware</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-grep.html">http-grep</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-headers.html">http-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-huawei-hg5xx-vuln.html">http-huawei-hg5xx-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-icloud-findmyiphone.html">http-icloud-findmyiphone</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-icloud-sendmsg.html">http-icloud-sendmsg</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-iis-short-name-brute.html">http-iis-short-name-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-iis-webdav-vuln.html">http-iis-webdav-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-internal-ip-disclosure.html">http-internal-ip-disclosure</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-joomla-brute.html">http-joomla-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-jsonp-detection.html">http-jsonp-detection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-litespeed-sourcecode-download.html">http-litespeed-sourcecode-download</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-ls.html">http-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-majordomo2-dir-traversal.html">http-majordomo2-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-malware-host.html">http-malware-host</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-mcmp.html">http-mcmp</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-method-tamper.html">http-method-tamper</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-methods.html">http-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-mobileversion-checker.html">http-mobileversion-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-ntlm-info.html">http-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-open-proxy.html">http-open-proxy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-open-redirect.html">http-open-redirect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-passwd.html">http-passwd</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-php-version.html">http-php-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-phpmyadmin-dir-traversal.html">http-phpmyadmin-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-phpself-xss.html">http-phpself-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-proxy-brute.html">http-proxy-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-put.html">http-put</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-qnap-nas-info.html">http-qnap-nas-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-referer-checker.html">http-referer-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-rfi-spider.html">http-rfi-spider</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robots.txt.html">http-robots.txt</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robtex-reverse-ip.html">http-robtex-reverse-ip</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robtex-shared-ns.html">http-robtex-shared-ns</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-security-headers.html">http-security-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-server-header.html">http-server-header</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-shellshock.html">http-shellshock</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-sitemap-generator.html">http-sitemap-generator</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-slowloris.html">http-slowloris</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-slowloris-check.html">http-slowloris-check</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-sql-injection.html">http-sql-injection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-stored-xss.html">http-stored-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-svn-enum.html">http-svn-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-svn-info.html">http-svn-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-title.html">http-title</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-tplink-dir-traversal.html">http-tplink-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-trace.html">http-trace</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-traceroute.html">http-traceroute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-trane-info.html">http-trane-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-unsafe-output-escaping.html">http-unsafe-output-escaping</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-useragent-tester.html">http-useragent-tester</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-userdir-enum.html">http-userdir-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vhosts.html">http-vhosts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-virustotal.html">http-virustotal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vlcstreamer-ls.html">http-vlcstreamer-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vmware-path-vuln.html">http-vmware-path-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2006-3392.html">http-vuln-cve2006-3392</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2009-3960.html">http-vuln-cve2009-3960</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2010-0738.html">http-vuln-cve2010-0738</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2010-2861.html">http-vuln-cve2010-2861</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2011-3192.html">http-vuln-cve2011-3192</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2011-3368.html">http-vuln-cve2011-3368</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2012-1823.html">http-vuln-cve2012-1823</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-0156.html">http-vuln-cve2013-0156</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-6786.html">http-vuln-cve2013-6786</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-7091.html">http-vuln-cve2013-7091</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2126.html">http-vuln-cve2014-2126</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2127.html">http-vuln-cve2014-2127</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2128.html">http-vuln-cve2014-2128</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2129.html">http-vuln-cve2014-2129</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-3704.html">http-vuln-cve2014-3704</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-8877.html">http-vuln-cve2014-8877</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2015-1427.html">http-vuln-cve2015-1427</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2015-1635.html">http-vuln-cve2015-1635</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-1001000.html">http-vuln-cve2017-1001000</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-5638.html">http-vuln-cve2017-5638</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-5689.html">http-vuln-cve2017-5689</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-8917.html">http-vuln-cve2017-8917</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-misfortune-cookie.html">http-vuln-misfortune-cookie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-wnr1000-creds.html">http-vuln-wnr1000-creds</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-waf-detect.html">http-waf-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-waf-fingerprint.html">http-waf-fingerprint</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-webdav-scan.html">http-webdav-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-brute.html">http-wordpress-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-enum.html">http-wordpress-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-users.html">http-wordpress-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-xssed.html">http-xssed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iax2-brute.html">iax2-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iax2-version.html">iax2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/icap-info.html">icap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iec-identify.html">iec-identify</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ike-version.html">ike-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-brute.html">imap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-capabilities.html">imap-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-ntlm-info.html">imap-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/impress-remote-discover.html">impress-remote-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-brute.html">informix-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-query.html">informix-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-tables.html">informix-tables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-forwarding.html">ip-forwarding</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-geoplugin.html">ip-geolocation-geoplugin</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-ipinfodb.html">ip-geolocation-ipinfodb</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-bing.html">ip-geolocation-map-bing</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-google.html">ip-geolocation-map-google</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-kml.html">ip-geolocation-map-kml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-maxmind.html">ip-geolocation-maxmind</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-https-discover.html">ip-https-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipidseq.html">ipidseq</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-brute.html">ipmi-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-cipher-zero.html">ipmi-cipher-zero</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-version.html">ipmi-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-multicast-mld-list.html">ipv6-multicast-mld-list</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-node-info.html">ipv6-node-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-ra-flood.html">ipv6-ra-flood</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-botnet-channels.html">irc-botnet-channels</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-brute.html">irc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-info.html">irc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-sasl-brute.html">irc-sasl-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-unrealircd-backdoor.html">irc-unrealircd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iscsi-brute.html">iscsi-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iscsi-info.html">iscsi-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/isns-info.html">isns-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-exec.html">jdwp-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-info.html">jdwp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-inject.html">jdwp-inject</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-version.html">jdwp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/knx-gateway-discover.html">knx-gateway-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/knx-gateway-info.html">knx-gateway-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/krb5-enum-users.html">krb5-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-brute.html">ldap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-novell-getpass.html">ldap-novell-getpass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-rootdse.html">ldap-rootdse</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-search.html">ldap-search</a>
+	</li>
+
+	<li>
+		<a href="../scripts/lexmark-config.html">lexmark-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/llmnr-resolve.html">llmnr-resolve</a>
+	</li>
+
+	<li>
+		<a href="../scripts/lltd-discovery.html">lltd-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/maxdb-info.html">maxdb-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mcafee-epo-agent.html">mcafee-epo-agent</a>
+	</li>
+
+	<li>
+		<a href="../scripts/membase-brute.html">membase-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/membase-http-info.html">membase-http-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/memcached-info.html">memcached-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-info.html">metasploit-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-msgrpc-brute.html">metasploit-msgrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-xmlrpc-brute.html">metasploit-xmlrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mikrotik-routeros-brute.html">mikrotik-routeros-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mmouse-brute.html">mmouse-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mmouse-exec.html">mmouse-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/modbus-discover.html">modbus-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-brute.html">mongodb-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-databases.html">mongodb-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-info.html">mongodb-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mqtt-subscribe.html">mqtt-subscribe</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mrinfo.html">mrinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-brute.html">ms-sql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-config.html">ms-sql-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-dac.html">ms-sql-dac</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-dump-hashes.html">ms-sql-dump-hashes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-empty-password.html">ms-sql-empty-password</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-hasdbaccess.html">ms-sql-hasdbaccess</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-info.html">ms-sql-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-ntlm-info.html">ms-sql-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-query.html">ms-sql-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-tables.html">ms-sql-tables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-xp-cmdshell.html">ms-sql-xp-cmdshell</a>
+	</li>
+
+	<li>
+		<a href="../scripts/msrpc-enum.html">msrpc-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mtrace.html">mtrace</a>
+	</li>
+
+	<li>
+		<a href="../scripts/murmur-version.html">murmur-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-audit.html">mysql-audit</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-brute.html">mysql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-databases.html">mysql-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-dump-hashes.html">mysql-dump-hashes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-empty-password.html">mysql-empty-password</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-enum.html">mysql-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-info.html">mysql-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-query.html">mysql-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-users.html">mysql-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-variables.html">mysql-variables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-vuln-cve2012-2122.html">mysql-vuln-cve2012-2122</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nat-pmp-info.html">nat-pmp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nat-pmp-mapport.html">nat-pmp-mapport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nbd-info.html">nbd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nbstat.html">nbstat</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ncp-enum-users.html">ncp-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ncp-serverinfo.html">ncp-serverinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ndmp-fs-info.html">ndmp-fs-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ndmp-version.html">ndmp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nessus-brute.html">nessus-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nessus-xmlrpc-brute.html">nessus-xmlrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-auth-bypass.html">netbus-auth-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-brute.html">netbus-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-info.html">netbus-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-version.html">netbus-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nexpose-brute.html">nexpose-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-ls.html">nfs-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-showmount.html">nfs-showmount</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-statfs.html">nfs-statfs</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nje-node-brute.html">nje-node-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nje-pass-brute.html">nje-pass-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nntp-ntlm-info.html">nntp-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nping-brute.html">nping-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nrpe-enum.html">nrpe-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ntp-info.html">ntp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ntp-monlist.html">ntp-monlist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omp2-brute.html">omp2-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omp2-enum-targets.html">omp2-enum-targets</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omron-info.html">omron-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openlookup-info.html">openlookup-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openvas-otp-brute.html">openvas-otp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openwebnet-discovery.html">openwebnet-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-brute.html">oracle-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-brute-stealth.html">oracle-brute-stealth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-enum-users.html">oracle-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-sid-brute.html">oracle-sid-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-tns-version.html">oracle-tns-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ovs-agent-version.html">ovs-agent-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/p2p-conficker.html">p2p-conficker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/path-mtu.html">path-mtu</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pcanywhere-brute.html">pcanywhere-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pcworx-info.html">pcworx-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pgsql-brute.html">pgsql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pjl-ready-message.html">pjl-ready-message</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-brute.html">pop3-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-capabilities.html">pop3-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-ntlm-info.html">pop3-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pptp-version.html">pptp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/puppet-naivesigning.html">puppet-naivesigning</a>
+	</li>
+
+	<li>
+		<a href="../scripts/qconn-exec.html">qconn-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/qscan.html">qscan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake1-info.html">quake1-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake3-info.html">quake3-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake3-master-getservers.html">quake3-master-getservers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rdp-enum-encryption.html">rdp-enum-encryption</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rdp-vuln-ms12-020.html">rdp-vuln-ms12-020</a>
+	</li>
+
+	<li>
+		<a href="../scripts/realvnc-auth-bypass.html">realvnc-auth-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/redis-brute.html">redis-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/redis-info.html">redis-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/resolveall.html">resolveall</a>
+	</li>
+
+	<li>
+		<a href="../scripts/reverse-index.html">reverse-index</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rexec-brute.html">rexec-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rfc868-time.html">rfc868-time</a>
+	</li>
+
+	<li>
+		<a href="../scripts/riak-http-info.html">riak-http-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rlogin-brute.html">rlogin-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rmi-dumpregistry.html">rmi-dumpregistry</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rmi-vuln-classloader.html">rmi-vuln-classloader</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpc-grind.html">rpc-grind</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcap-brute.html">rpcap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcap-info.html">rpcap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcinfo.html">rpcinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsa-vuln-roca.html">rsa-vuln-roca</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsync-brute.html">rsync-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsync-list-modules.html">rsync-list-modules</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rtsp-methods.html">rtsp-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rtsp-url-brute.html">rtsp-url-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rusers.html">rusers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/s7-info.html">s7-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/samba-vuln-cve-2012-1182.html">samba-vuln-cve-2012-1182</a>
+	</li>
+
+	<li>
+		<a href="../scripts/servicetags.html">servicetags</a>
+	</li>
+
+	<li>
+		<a href="../scripts/shodan-api.html">shodan-api</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-brute.html">sip-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-call-spoof.html">sip-call-spoof</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-enum-users.html">sip-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-methods.html">sip-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/skypev2-version.html">skypev2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-brute.html">smb-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-double-pulsar-backdoor.html">smb-double-pulsar-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-domains.html">smb-enum-domains</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-groups.html">smb-enum-groups</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-processes.html">smb-enum-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-services.html">smb-enum-services</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-sessions.html">smb-enum-sessions</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-shares.html">smb-enum-shares</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-users.html">smb-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-flood.html">smb-flood</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-ls.html">smb-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-mbenum.html">smb-mbenum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-os-discovery.html">smb-os-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-print-text.html">smb-print-text</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-protocols.html">smb-protocols</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-psexec.html">smb-psexec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-security-mode.html">smb-security-mode</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-server-stats.html">smb-server-stats</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-system-info.html">smb-system-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-conficker.html">smb-vuln-conficker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-cve-2017-7494.html">smb-vuln-cve-2017-7494</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-cve2009-3103.html">smb-vuln-cve2009-3103</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms06-025.html">smb-vuln-ms06-025</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms07-029.html">smb-vuln-ms07-029</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms08-067.html">smb-vuln-ms08-067</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms10-054.html">smb-vuln-ms10-054</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms10-061.html">smb-vuln-ms10-061</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms17-010.html">smb-vuln-ms17-010</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-regsvc-dos.html">smb-vuln-regsvc-dos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-capabilities.html">smb2-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-security-mode.html">smb2-security-mode</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-time.html">smb2-time</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-vuln-uptime.html">smb2-vuln-uptime</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-brute.html">smtp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-commands.html">smtp-commands</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-enum-users.html">smtp-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-ntlm-info.html">smtp-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-open-relay.html">smtp-open-relay</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-strangeport.html">smtp-strangeport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2010-4344.html">smtp-vuln-cve2010-4344</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2011-1720.html">smtp-vuln-cve2011-1720</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2011-1764.html">smtp-vuln-cve2011-1764</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sniffer-detect.html">sniffer-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-brute.html">snmp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-hh3c-logins.html">snmp-hh3c-logins</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-info.html">snmp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-interfaces.html">snmp-interfaces</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-ios-config.html">snmp-ios-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-netstat.html">snmp-netstat</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-processes.html">snmp-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-sysdescr.html">snmp-sysdescr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-services.html">snmp-win32-services</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-shares.html">snmp-win32-shares</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-software.html">snmp-win32-software</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-users.html">snmp-win32-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-auth-info.html">socks-auth-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-brute.html">socks-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-open-proxy.html">socks-open-proxy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-auth-methods.html">ssh-auth-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-brute.html">ssh-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-hostkey.html">ssh-hostkey</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-publickey-acceptance.html">ssh-publickey-acceptance</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-run.html">ssh-run</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh2-enum-algos.html">ssh2-enum-algos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sshv1.html">sshv1</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-ccs-injection.html">ssl-ccs-injection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-cert.html">ssl-cert</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-cert-intaddr.html">ssl-cert-intaddr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-date.html">ssl-date</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-dh-params.html">ssl-dh-params</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-enum-ciphers.html">ssl-enum-ciphers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-heartbleed.html">ssl-heartbleed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-known-key.html">ssl-known-key</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-poodle.html">ssl-poodle</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sslv2.html">sslv2</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sslv2-drown.html">sslv2-drown</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sstp-discover.html">sstp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stun-info.html">stun-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stun-version.html">stun-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stuxnet-detect.html">stuxnet-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/supermicro-ipmi-conf.html">supermicro-ipmi-conf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/svn-brute.html">svn-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-asn.html">targets-asn</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-map4to6.html">targets-ipv6-map4to6</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-echo.html">targets-ipv6-multicast-echo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-invalid-dst.html">targets-ipv6-multicast-invalid-dst</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-mld.html">targets-ipv6-multicast-mld</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-slaac.html">targets-ipv6-multicast-slaac</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-wordlist.html">targets-ipv6-wordlist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-sniffer.html">targets-sniffer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-traceroute.html">targets-traceroute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-xml.html">targets-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/teamspeak2-version.html">teamspeak2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-brute.html">telnet-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-encryption.html">telnet-encryption</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-ntlm-info.html">telnet-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tftp-enum.html">tftp-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-alpn.html">tls-alpn</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-nextprotoneg.html">tls-nextprotoneg</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-ticketbleed.html">tls-ticketbleed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tn3270-screen.html">tn3270-screen</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tor-consensus-checker.html">tor-consensus-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/traceroute-geolocation.html">traceroute-geolocation</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tso-brute.html">tso-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tso-enum.html">tso-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/unittest.html">unittest</a>
+	</li>
+
+	<li>
+		<a href="../scripts/unusual-port.html">unusual-port</a>
+	</li>
+
+	<li>
+		<a href="../scripts/upnp-info.html">upnp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/url-snarf.html">url-snarf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ventrilo-info.html">ventrilo-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/versant-info.html">versant-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vmauthd-brute.html">vmauthd-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vmware-version.html">vmware-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-brute.html">vnc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-info.html">vnc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-title.html">vnc-title</a>
+	</li>
+
+	<li>
+		<a href="../scripts/voldemort-info.html">voldemort-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vtam-enum.html">vtam-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vuze-dht-info.html">vuze-dht-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/wdb-version.html">wdb-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/weblogic-t3-info.html">weblogic-t3-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/whois-domain.html">whois-domain</a>
+	</li>
+
+	<li>
+		<a href="../scripts/whois-ip.html">whois-ip</a>
+	</li>
+
+	<li>
+		<a href="../scripts/wsdd-discover.html">wsdd-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/x11-access.html">x11-access</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xdmcp-discover.html">xdmcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmlrpc-methods.html">xmlrpc-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmpp-brute.html">xmpp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmpp-info.html">xmpp-info</a>
+	</li>
+
+</ul>
+
+
+<!-- Module list -->
+
+<h1><span class="jsvisible"><a href="javascript:toggle_contents('libraries')">Libraries <span id="show-libraries" class="showbutton">(show 133)</span><span id="hide-libraries" class="hidebutton">(133)</span></a></span><span class="jsinvisible">Libraries (133)</span></h1>
+<ul id="contents-libraries" class="contents">
+
+	<li>
+		<a href="../lib/afp.html">afp</a>
+	</li>
+
+	<li>
+		<a href="../lib/ajp.html">ajp</a>
+	</li>
+
+	<li>
+		<a href="../lib/amqp.html">amqp</a>
+	</li>
+
+	<li>
+		<a href="../lib/anyconnect.html">anyconnect</a>
+	</li>
+
+	<li>
+		<a href="../lib/asn1.html">asn1</a>
+	</li>
+
+	<li>
+		<a href="../lib/base32.html">base32</a>
+	</li>
+
+	<li>
+		<a href="../lib/base64.html">base64</a>
+	</li>
+
+	<li>
+		<a href="../lib/bin.html">bin</a>
+	</li>
+
+	<li>
+		<a href="../lib/bit.html">bit</a>
+	</li>
+
+	<li>
+		<a href="../lib/bitcoin.html">bitcoin</a>
+	</li>
+
+	<li>
+		<a href="../lib/bits.html">bits</a>
+	</li>
+
+	<li>
+		<a href="../lib/bittorrent.html">bittorrent</a>
+	</li>
+
+	<li>
+		<a href="../lib/bjnp.html">bjnp</a>
+	</li>
+
+	<li>
+		<a href="../lib/brute.html">brute</a>
+	</li>
+
+	<li>
+		<a href="../lib/cassandra.html">cassandra</a>
+	</li>
+
+	<li>
+		<a href="../lib/citrixxml.html">citrixxml</a>
+	</li>
+
+	<li>
+		<a href="../lib/coap.html">coap</a>
+	</li>
+
+	<li>
+		<a href="../lib/comm.html">comm</a>
+	</li>
+
+	<li>
+		<a href="../lib/creds.html">creds</a>
+	</li>
+
+	<li>
+		<a href="../lib/cvs.html">cvs</a>
+	</li>
+
+	<li>
+		<a href="../lib/datafiles.html">datafiles</a>
+	</li>
+
+	<li>
+		<a href="../lib/datetime.html">datetime</a>
+	</li>
+
+	<li>
+		<a href="../lib/dhcp.html">dhcp</a>
+	</li>
+
+	<li>
+		<a href="../lib/dhcp6.html">dhcp6</a>
+	</li>
+
+	<li>
+		<a href="../lib/dns.html">dns</a>
+	</li>
+
+	<li>
+		<a href="../lib/dnsbl.html">dnsbl</a>
+	</li>
+
+	<li>
+		<a href="../lib/dnssd.html">dnssd</a>
+	</li>
+
+	<li>
+		<a href="../lib/drda.html">drda</a>
+	</li>
+
+	<li>
+		<a href="../lib/eap.html">eap</a>
+	</li>
+
+	<li>
+		<a href="../lib/eigrp.html">eigrp</a>
+	</li>
+
+	<li>
+		<a href="../lib/formulas.html">formulas</a>
+	</li>
+
+	<li>
+		<a href="../lib/ftp.html">ftp</a>
+	</li>
+
+	<li>
+		<a href="../lib/geoip.html">geoip</a>
+	</li>
+
+	<li>
+		<a href="../lib/giop.html">giop</a>
+	</li>
+
+	<li>
+		<a href="../lib/gps.html">gps</a>
+	</li>
+
+	<li>
+		<a href="../lib/http.html">http</a>
+	</li>
+
+	<li>
+		<a href="../lib/httpspider.html">httpspider</a>
+	</li>
+
+	<li>
+		<a href="../lib/iax2.html">iax2</a>
+	</li>
+
+	<li>
+		<a href="../lib/idna.html">idna</a>
+	</li>
+
+	<li>
+		<a href="../lib/ike.html">ike</a>
+	</li>
+
+	<li>
+		<a href="../lib/imap.html">imap</a>
+	</li>
+
+	<li>
+		<a href="../lib/informix.html">informix</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipmi.html">ipmi</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipOps.html">ipOps</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipp.html">ipp</a>
+	</li>
+
+	<li>
+		<a href="../lib/irc.html">irc</a>
+	</li>
+
+	<li>
+		<a href="../lib/iscsi.html">iscsi</a>
+	</li>
+
+	<li>
+		<a href="../lib/isns.html">isns</a>
+	</li>
+
+	<li>
+		<a href="../lib/jdwp.html">jdwp</a>
+	</li>
+
+	<li>
+		<a href="../lib/json.html">json</a>
+	</li>
+
+	<li>
+		<a href="../lib/ldap.html">ldap</a>
+	</li>
+
+	<li>
+		<a href="../lib/lfs.html">lfs</a>
+	</li>
+
+	<li>
+		<a href="../lib/libssh2.html">libssh2</a>
+	</li>
+
+	<li>
+		<a href="../lib/libssh2-utility.html">libssh2-utility</a>
+	</li>
+
+	<li>
+		<a href="../lib/listop.html">listop</a>
+	</li>
+
+	<li>
+		<a href="../lib/lpeg.html">lpeg</a>
+	</li>
+
+	<li>
+		<a href="../lib/lpeg-utility.html">lpeg-utility</a>
+	</li>
+
+	<li>
+		<a href="../lib/ls.html">ls</a>
+	</li>
+
+	<li>
+		<a href="../lib/match.html">match</a>
+	</li>
+
+	<li>
+		<a href="../lib/membase.html">membase</a>
+	</li>
+
+	<li>
+		<a href="../lib/mobileme.html">mobileme</a>
+	</li>
+
+	<li>
+		<a href="../lib/mongodb.html">mongodb</a>
+	</li>
+
+	<li>
+		<a href="../lib/mqtt.html">mqtt</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpc.html">msrpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpcperformance.html">msrpcperformance</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpctypes.html">msrpctypes</a>
+	</li>
+
+	<li>
+		<a href="../lib/mssql.html">mssql</a>
+	</li>
+
+	<li>
+		<a href="../lib/multicast.html">multicast</a>
+	</li>
+
+	<li>
+		<a href="../lib/mysql.html">mysql</a>
+	</li>
+
+	<li>
+		<a href="../lib/natpmp.html">natpmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/nbd.html">nbd</a>
+	</li>
+
+	<li>
+		<a href="../lib/ncp.html">ncp</a>
+	</li>
+
+	<li>
+		<a href="../lib/ndmp.html">ndmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/netbios.html">netbios</a>
+	</li>
+
+	<li>
+		<a href="../lib/nmap.html">nmap</a>
+	</li>
+
+	<li>
+		<a href="../lib/nrpc.html">nrpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/nsedebug.html">nsedebug</a>
+	</li>
+
+	<li>
+		<a href="../lib/omp2.html">omp2</a>
+	</li>
+
+	<li>
+		<a href="../lib/openssl.html">openssl</a>
+	</li>
+
+	<li>
+		<a href="../lib/ospf.html">ospf</a>
+	</li>
+
+	<li>
+		<a href="../lib/packet.html">packet</a>
+	</li>
+
+	<li>
+		<a href="../lib/pcre.html">pcre</a>
+	</li>
+
+	<li>
+		<a href="../lib/pgsql.html">pgsql</a>
+	</li>
+
+	<li>
+		<a href="../lib/pop3.html">pop3</a>
+	</li>
+
+	<li>
+		<a href="../lib/pppoe.html">pppoe</a>
+	</li>
+
+	<li>
+		<a href="../lib/proxy.html">proxy</a>
+	</li>
+
+	<li>
+		<a href="../lib/punycode.html">punycode</a>
+	</li>
+
+	<li>
+		<a href="../lib/rdp.html">rdp</a>
+	</li>
+
+	<li>
+		<a href="../lib/re.html">re</a>
+	</li>
+
+	<li>
+		<a href="../lib/redis.html">redis</a>
+	</li>
+
+	<li>
+		<a href="../lib/rmi.html">rmi</a>
+	</li>
+
+	<li>
+		<a href="../lib/rpc.html">rpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/rpcap.html">rpcap</a>
+	</li>
+
+	<li>
+		<a href="../lib/rsync.html">rsync</a>
+	</li>
+
+	<li>
+		<a href="../lib/rtsp.html">rtsp</a>
+	</li>
+
+	<li>
+		<a href="../lib/sasl.html">sasl</a>
+	</li>
+
+	<li>
+		<a href="../lib/shortport.html">shortport</a>
+	</li>
+
+	<li>
+		<a href="../lib/sip.html">sip</a>
+	</li>
+
+	<li>
+		<a href="../lib/slaxml.html">slaxml</a>
+	</li>
+
+	<li><strong>smb</strong></li>
+	
+	<li>
+		<a href="../lib/smb2.html">smb2</a>
+	</li>
+
+	<li>
+		<a href="../lib/smbauth.html">smbauth</a>
+	</li>
+
+	<li>
+		<a href="../lib/smtp.html">smtp</a>
+	</li>
+
+	<li>
+		<a href="../lib/snmp.html">snmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/socks.html">socks</a>
+	</li>
+
+	<li>
+		<a href="../lib/srvloc.html">srvloc</a>
+	</li>
+
+	<li>
+		<a href="../lib/ssh1.html">ssh1</a>
+	</li>
+
+	<li>
+		<a href="../lib/ssh2.html">ssh2</a>
+	</li>
+
+	<li>
+		<a href="../lib/sslcert.html">sslcert</a>
+	</li>
+
+	<li>
+		<a href="../lib/sslv2.html">sslv2</a>
+	</li>
+
+	<li>
+		<a href="../lib/stdnse.html">stdnse</a>
+	</li>
+
+	<li>
+		<a href="../lib/strbuf.html">strbuf</a>
+	</li>
+
+	<li>
+		<a href="../lib/strict.html">strict</a>
+	</li>
+
+	<li>
+		<a href="../lib/stun.html">stun</a>
+	</li>
+
+	<li>
+		<a href="../lib/tab.html">tab</a>
+	</li>
+
+	<li>
+		<a href="../lib/target.html">target</a>
+	</li>
+
+	<li>
+		<a href="../lib/tftp.html">tftp</a>
+	</li>
+
+	<li>
+		<a href="../lib/tls.html">tls</a>
+	</li>
+
+	<li>
+		<a href="../lib/tn3270.html">tn3270</a>
+	</li>
+
+	<li>
+		<a href="../lib/tns.html">tns</a>
+	</li>
+
+	<li>
+		<a href="../lib/unicode.html">unicode</a>
+	</li>
+
+	<li>
+		<a href="../lib/unittest.html">unittest</a>
+	</li>
+
+	<li>
+		<a href="../lib/unpwdb.html">unpwdb</a>
+	</li>
+
+	<li>
+		<a href="../lib/upnp.html">upnp</a>
+	</li>
+
+	<li>
+		<a href="../lib/url.html">url</a>
+	</li>
+
+	<li>
+		<a href="../lib/versant.html">versant</a>
+	</li>
+
+	<li>
+		<a href="../lib/vnc.html">vnc</a>
+	</li>
+
+	<li>
+		<a href="../lib/vulns.html">vulns</a>
+	</li>
+
+	<li>
+		<a href="../lib/vuzedht.html">vuzedht</a>
+	</li>
+
+	<li>
+		<a href="../lib/wsdd.html">wsdd</a>
+	</li>
+
+	<li>
+		<a href="../lib/xdmcp.html">xdmcp</a>
+	</li>
+
+	<li>
+		<a href="../lib/xmpp.html">xmpp</a>
+	</li>
+
+	<li>
+		<a href="../lib/zlib.html">zlib</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Library <code>smb</code></h1>
+
+<p>
+Implements functionality related to Server Message Block (SMB, an extension
+of CIFS) traffic, which is a Windows protocol.
+</p>
+<p>
+SMB traffic is normally sent to/from ports 139 or 445 of Windows systems. Other systems
+implement SMB as well, including Samba and a lot of embedded devices. Some of them implement
+it properly and many of them not. Although the protocol has been documented decently
+well by Samba and others, many 3rd party implementations are broken or make assumptions.
+Even Samba's and Windows' implementations aren't completely compatible. As a result,
+creating an implementation that accepts everything is a bit of a minefield. Microsoft's
+extensive documentation is available at the following URLs:
+<ul>
+<li>SMB: <a href="http://msdn.microsoft.com/en-us/library/cc246231(v=prot.13).aspx">http://msdn.microsoft.com/en-us/library/cc246231(v=prot.13).aspx</a>
+</li>
+<li>CIFS: <a href="http://msdn.microsoft.com/en-us/library/ee442092(v=prot.13).aspx">http://msdn.microsoft.com/en-us/library/ee442092(v=prot.13).aspx</a>
+</li>
+</ul>
+</p>
+<p>
+Where possible, this implementation, since it's intended for scanning, will attempt to
+accept any invalid implementations it can, and fail gracefully if it can't. This has
+been tested against a great number of weird implementations, and it now works against
+all of them.
+</p>
+<p>
+The intention of this library is to eventually handle all aspects of the SMB protocol.
+That being said, I'm only implementing the pieces that I (Ron Bowes) need. If you
+require something more, let me know and I'll put it on my todo list.
+</p>
+<p>
+A programmer using this library should already have some knowledge of the SMB protocol,
+although a lot isn't necessary. You can pick up a lot by looking at the code. The basic
+login/logoff is this:
+</p>
+<p>
+<pre>[connect]
+C-&gt;S SMB_COM_NEGOTIATE
+S-&gt;C SMB_COM_NEGOTIATE
+C-&gt;S SMB_COM_SESSION_SETUP_ANDX
+S-&gt;C SMB_COM_SESSION_SETUP_ANDX
+C-&gt;S SMB_COM_TREE_CONNECT_ANDX
+S-&gt;C SMB_COM_TREE_CONNECT_ANDX
+...
+C-&gt;S SMB_COM_TREE_DISCONNECT
+S-&gt;C SMB_COM_TREE_DISCONNECT
+C-&gt;S SMB_COM_LOGOFF_ANDX
+S-&gt;C SMB_COM_LOGOFF_ANDX
+[disconnect]</pre>
+</p>
+<p>
+In terms of functions here, the protocol is:
+</p>
+<p>
+<pre>status, smbstate = smb.start(host)
+status, err      = smb.negotiate_protocol(smbstate, {})
+status, err      = smb.start_session(smbstate, {})
+status, err      = smb.tree_connect(smbstate, path, {})
+...
+status, err      = smb.tree_disconnect(smbstate)
+status, err      = smb.logoff(smbstate)
+status, err      = smb.stop(smbstate)</pre>
+</p>
+<p>
+The <code>stop</code> function will automatically call tree_disconnect and logoff,
+cleaning up the session, if it hasn't been done already.
+</p>
+<p>
+To initially begin the connection, there are two options:
+</p>
+<p>
+1) Attempt to start a raw session over 445, if it's open.
+</p>
+<p>
+2) Attempt to start a NetBIOS session over 139. Although the
+   protocol's the same, it requires a <code>session request</code> packet.
+   That packet requires the computer's name, which is requested
+   using a NBSTAT probe over UDP port 137.
+</p>
+<p>
+Once it's connected, a <code>SMB_COM_NEGOTIATE</code> packet is sent, requesting the protocol
+"NT LM 0.12", which is the most commonly supported one. Among other things, the server's
+response contains the host's security level, the system time, and the computer/domain name.
+Some systems will refuse to use that protocol and return "-1" or "1" instead of 0. If that's
+detected, we kill the connection (because the protocol following won't work).
+</p>
+<p>
+If that's successful, <code>SMB_COM_SESSION_SETUP_ANDX</code> is sent. It is essentially the logon
+packet, where the username, domain, and password are sent to the server for verification.
+The username and password are generally picked up from the program parameters, which are
+set when running a script, or from the registry where it can be set by other scripts (for
+example, <code>smb-brute.nse</code>). However, they can also be passed as parameters to the
+function, which will override any other username/password set.
+</p>
+<p>
+If a username and password are set, they are used for the first login attempt. If a login fails,
+or they weren't set, a connection as the 'GUEST' account with a blank password is attempted. If
+that fails, then a NULL session is established, which should always work. The username/password
+will give the highest access level, GUEST will give lower access, and NULL will give the lowest
+(often, NULL will give no access).
+</p>
+<p>
+The actual login protocol used by <code>SMB_COM_SESSION_SETUP_ANDX</code> is explained in detail
+in <code>smbauth.lua</code>.
+</p>
+<p>
+Thanks go to Christopher R. Hertel and his book Implementing CIFS, which
+taught me everything I know about Microsoft's protocols. Additionally, I used Samba's
+list of error codes for my constants. Although I don't believe they would be covered
+by GPL, since they're public now anyways, but I'm not a lawyer and, if somebody feels
+differently, let me know and we can sort this out.
+</p>
+<p>
+Scripts that use this module can use the script arguments listed below
+example of using these script arguments:
+<pre>nmap --script=smb-&lt;script&gt;.nse --script-args=smbuser=ron,smbpass=iagotest2k3,smbbasic=1,smbsign=force &lt;host&gt;</pre></p>
+
+
+<p><b>Author:</b>
+<ul class="authors_list">
+
+	<li class="name">Ron Bowes &lt;ron@skullsecurity.net&gt;</li>
+
+</ul>
+</p>
+
+
+<p>Copyright&copy; Same as Nmap--See <a href="https://nmap.org/book/man-legal.html">https://nmap.org/book/man-legal.html</a></p>
+
+
+
+
+<p>
+Source: <a href="https://svn.nmap.org/nmap/nselib/smb.lua">https://svn.nmap.org/nmap/nselib/smb.lua</a>
+</p>
+
+
+
+<h2 id="script-args">Script Arguments</h2>
+  <p>
+    
+      <h4> smbbasic </h4>
+      <p>
+Forces the authentication to use basic security, as opposed to "extended security".
+                  Against most modern systems, extended security should work, but there may be cases
+                  where you want to force basic. There's a chance that you'll get better results for
+                  enumerating users if you turn on basic authentication.</p>
+
+    
+      <h4> smbsign </h4>
+      <p>
+Controls whether or not server signatures are checked in SMB packets. By default, on Windows,
+                  server signatures aren't enabled or required. By default, this library will always sign
+                  packets if it knows how, and will check signatures if the server says to. Possible values are:
+<ul>
+<li><code>force</code>:      Always check server signatures, even if server says it doesn't support them (will
+                        probably fail, but is technically more secure).
+</li>
+<li><code>negotiate</code>: [default] Use signatures if server supports them.
+</li>
+<li><code>ignore</code>:    Never check server signatures. Not recommended.
+</li>
+<li><code>disable</code>:   Don't send signatures, at all, and don't check the server's. not recommended.
+                More information on signatures can be found in <code>smbauth.lua</code>.</li>
+</ul>
+</p>
+
+    
+      <h4> randomseed </h4>
+      <p>
+Set to a value to change the filenames/service names that are randomly generated.</p>
+
+    
+      <h4> smbport </h4>
+      <p>
+Override the default port choice. If <code>smbport</code> is open, it's used. It's assumed
+                  to be the same protocol as port 445, not port 139. Since it probably isn't possible to change
+                  Windows' ports normally, this is mostly useful if you're bouncing through a relay or something.</p>
+
+    
+  </p>
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+       <td class="name" nowrap><a href="#add_account">add_account</a>&nbsp;(host, username, domain, password, password_hash, hash_type, is_admin)</td>
+       <td class="summary">
+      <p>
+Wrapper around <code>smbauth.add_account</code>.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#close_file">close_file</a>&nbsp;(smb, overrides)</td>
+       <td class="summary">
+      <p>
+This sends a SMB request to close a file (or a pipe).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#create_file">create_file</a>&nbsp;(smb, path, overrides)</td>
+       <td class="summary">
+      <p>
+This sends a SMB request to open or create a file.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#delete_file">delete_file</a>&nbsp;(smb, path, overrides)</td>
+       <td class="summary">
+      <p>
+This sends a SMB request to delete a file (or a pipe).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#disable_extended">disable_extended</a>&nbsp;(smb)</td>
+       <td class="summary">
+      <p>
+Turn off extended security negotiations for this connection.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#file_delete">file_delete</a>&nbsp;(host, share, remotefile)</td>
+       <td class="summary">
+      <p>
+Delete a file from the remote machine</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#file_read">file_read</a>&nbsp;(host, share, remotefile, use_anonymous, overrides)</td>
+       <td class="summary">
+      <p>
+Write given data to the remote machine on the given share. This is similar to <code>file_upload</code>, except the
+data is given as a string, not a file.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#file_upload">file_upload</a>&nbsp;(host, localfile, share, remotefile, overrides, encoded)</td>
+       <td class="summary">
+      <p>
+Upload a file from the local machine to the remote machine, on the given share.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#file_write">file_write</a>&nbsp;(host, data, share, remotefile, use_anonymous)</td>
+       <td class="summary">
+      <p>
+Write given data to the remote machine on the given share. This is similar to <code>file_upload</code>, except the
+data is given as a string, not a file.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#files_exist">files_exist</a>&nbsp;(host, share, files, overrides)</td>
+       <td class="summary">
+      <p>
+Check how many files, in a given list, exist on the given share.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#find_files">find_files</a>&nbsp;(smbstate, fname, options)</td>
+       <td class="summary">
+      <p>
+List files based on a pattern within a given share and directory</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_account">get_account</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Wrapper around <code>smbauth.get_account</code>.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_fqpn">get_fqpn</a>&nbsp;(host, sharename)</td>
+       <td class="summary">
+      <p>
+Returns the fully qualified path name (FQPN) for shares.
+This is required for modern versions of Windows.
+Returns \\&lt;ip&gt;\&lt;sharename&gt; when successful. Otherwise, returns the same share name.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_os">get_os</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Retrieve information about the host's operating system. This should always be possible to call, as long as there isn't already
+a SMB session established.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_overrides">get_overrides</a>&nbsp;(username, domain, password, password_hash, hash_type, overrides)</td>
+       <td class="summary">
+      <p>
+Create an 'overrides' table</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_overrides_anonymous">get_overrides_anonymous</a>&nbsp;(overrides)</td>
+       <td class="summary">
+      <p>
+Get an 'overrides' table for the anonymous user</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_port">get_port</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Determines whether or not SMB checks are possible on this host, and, if they are,
+ which port is best to use. This is how it decides:</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_socket_info">get_socket_info</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Basically a wrapper around <code>socket:get_info</code>, except that it also makes a SMB connection before calling the
+<code>get_info</code> function. Returns the mac address as well, for convenience.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_status_name">get_status_name</a>&nbsp;(status)</td>
+       <td class="summary">
+      <p>
+Convert a status number from the SMB header into a status name, returning an error message (not nil) if
+it wasn't found.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_uniqueish_name">get_uniqueish_name</a>&nbsp;(host, extension, seed)</td>
+       <td class="summary">
+      <p>
+Generate a string that's somewhat unique, but is based on factors that won't
+change on a host.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_windows_version">get_windows_version</a>&nbsp;(os)</td>
+       <td class="summary">
+      <p>
+Converts numbered Windows version strings (<code>"Windows 5.0"</code>, <code>"Windows 5.1"</code>) to names (<code>"Windows 2000"</code>, <code>"Windows XP"</code>).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#is_admin">is_admin</a>&nbsp;(host, username, domain, password, password_hash, hash_type)</td>
+       <td class="summary">
+      <p>
+Determines, as accurately as possible, whether or not an account is an administrator. If there is an error,
+'false' is simply returned.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#list_dialects">list_dialects</a>&nbsp;(host, overrides)</td>
+       <td class="summary">
+      <p>
+Returns list of supported dialects for SMBv1, SMBv2 and SMBv3.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#logoff">logoff</a>&nbsp;(smb, overrides)</td>
+       <td class="summary">
+      <p>
+Logs off the current user. Strictly speaking this isn't necessary, but it's the polite thing to do.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#negotiate_protocol">negotiate_protocol</a>&nbsp;(smb, overrides)</td>
+       <td class="summary">
+      <p>
+Wrapper function to negotiate the protocol to use in the SMB connection.
+By default it attempts to negotiate with using following dialects:
+<ul>
+<li>NT LM 12.0 (SMBv1)</li>
+</ul>
+</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#negotiate_v1">negotiate_v1</a>&nbsp;(smb, overrides)</td>
+       <td class="summary">
+      <p>
+Negotiates SMBv1 connections</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#read_file">read_file</a>&nbsp;(smb, offset, count, overrides)</td>
+       <td class="summary">
+      <p>
+This sends a SMB request to read from a file (or a pipe).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#send_transaction_named_pipe">send_transaction_named_pipe</a>&nbsp;(smb, function_parameters, function_data, pipe, no_setup, overrides)</td>
+       <td class="summary">
+      <p>
+This is the core of making MSRPC calls. It sends out a MSRPC packet with the
+given parameters and data.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_anonymous_can_read">share_anonymous_can_read</a>&nbsp;(host, share)</td>
+       <td class="summary">
+      <p>
+Check whether or not a share is accessible by the anonymous user. Assumes that <code>share_host_returns_proper_error</code>
+has been called and returns <code>true</code>.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_anonymous_can_write">share_anonymous_can_write</a>&nbsp;(host, share)</td>
+       <td class="summary">
+      <p>
+Determine whether or not the anonymous user has write access on the share. This is done by creating then
+deleting a file.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_find_writable">share_find_writable</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Find a share that the current user can write to. Return it, along with its path. If no share could be found,
+an error is returned. If the path cannot be determined, the returned path is nil.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_get_details">share_get_details</a>&nbsp;(host, share)</td>
+       <td class="summary">
+      <p>
+Get all the details we can about the share. These details are stored in a table and returned.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_get_list">share_get_list</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Retrieve a list of fileshares, along with any details that could be pulled. This is the core of smb-enum-shares.nse, but
+can also be used by any script that needs to find an open share.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_host_returns_proper_error">share_host_returns_proper_error</a>&nbsp;(host, use_anonymous)</td>
+       <td class="summary">
+      <p>
+Determine whether or not a host will accept any share name (I've seen this on certain systems; it's
+bad, because it means we cannot tell whether or not a share exists).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_user_can_read">share_user_can_read</a>&nbsp;(host, share)</td>
+       <td class="summary">
+      <p>
+Check whether or not a share is accessible by the current user. Assumes that <code>share_host_returns_proper_error</code>
+has been called and returns <code>true</code>.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#share_user_can_write">share_user_can_write</a>&nbsp;(host, share)</td>
+       <td class="summary">
+      <p>
+Determine whether or not the current user has read or read/write access on the share. This is done by creating then
+deleting a file.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#smb_encode_header">smb_encode_header</a>&nbsp;(smb, command, overrides)</td>
+       <td class="summary">
+      <p>
+Creates a string containing a SMB packet header. The header looks like this:</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#smb_read">smb_read</a>&nbsp;(smb, read_data)</td>
+       <td class="summary">
+      <p>
+Reads the next packet from the socket, and parses it into the header, parameters,
+ and data.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#smb_send">smb_send</a>&nbsp;(smb, header, parameters, data, overrides)</td>
+       <td class="summary">
+      <p>
+Prepends the NetBIOS header to the packet, which is essentially the length, encoded
+ in 4 bytes of big endian, and sends it out.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#start">start</a>&nbsp;(host)</td>
+       <td class="summary">
+      <p>
+Begins a SMB session, automatically determining the best way to connect.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#start_ex">start_ex</a>&nbsp;(host, bool_negotiate_protocol, bool_start_session, str_tree_connect, str_create_file, bool_disable_extended, overrides)</td>
+       <td class="summary">
+      <p>
+Initiates a SMB connection over whichever port it can, then optionally sends
+the common initialization packets.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#start_netbios">start_netbios</a>&nbsp;(host, port, name)</td>
+       <td class="summary">
+      <p>
+Begins a SMB session over NetBIOS.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#start_raw">start_raw</a>&nbsp;(host, port)</td>
+       <td class="summary">
+      <p>
+Begins a raw SMB session, likely over port 445. Since nothing extra is required, this
+ function simply makes a connection and returns the socket.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#start_session">start_session</a>&nbsp;(smb, overrides, log_errors)</td>
+       <td class="summary">
+      <p>
+Sends out SMB_COM_SESSION_SETUP_ANDX, which attempts to log a user in.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#stop">stop</a>&nbsp;(smb)</td>
+       <td class="summary">
+      <p>
+Kills the SMB connection and closes the socket.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#tree_connect">tree_connect</a>&nbsp;(smb, path, overrides)</td>
+       <td class="summary">
+      <p>
+Sends out <code>SMB_COM_SESSION_TREE_CONNECT_ANDX</code>, which attempts to
+connect to a share.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#tree_disconnect">tree_disconnect</a>&nbsp;(smb, overrides)</td>
+       <td class="summary">
+      <p>
+Disconnects a tree session. Should be called before logging off and disconnecting.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#write_file">write_file</a>&nbsp;(smb, write_data, offset, overrides)</td>
+       <td class="summary">
+      <p>
+This sends a SMB request to write to a file (or a pipe).</p>
+
+    </td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="add_account"></a><strong>add_account</strong>&nbsp;(host, username, domain, password, password_hash, hash_type, is_admin)</dt>
+<dd>
+
+<p>
+Wrapper around <code>smbauth.add_account</code>.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+	</li>
+	
+	<li>
+	  username:
+          
+	</li>
+	
+	<li>
+	  domain:
+          
+	</li>
+	
+	<li>
+	  password:
+          
+	</li>
+	
+	<li>
+	  password_hash:
+          
+	</li>
+	
+	<li>
+	  hash_type:
+          
+	</li>
+	
+	<li>
+	  is_admin:
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="close_file"></a><strong>close_file</strong>&nbsp;(smb, overrides)</dt>
+<dd>
+
+<p>
+This sends a SMB request to close a file (or a pipe).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="create_file"></a><strong>create_file</strong>&nbsp;(smb, path, overrides)</dt>
+<dd>
+
+<p>
+This sends a SMB request to open or create a file.
+</p>
+<p>
+ Most of the parameters I pass here are used directly from a packetlog,
+ especially the various permissions fields and flags.  I might make this
+ more adjustable in the future, but this has been working for me.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path of the file or pipe to open
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] Overrides for various fields
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a table
+       containing a lot of different elements, the most important one being 'fid', the handle to the opened file.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="delete_file"></a><strong>delete_file</strong>&nbsp;(smb, path, overrides)</dt>
+<dd>
+
+<p>
+This sends a SMB request to delete a file (or a pipe).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path of the file to delete
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="disable_extended"></a><strong>disable_extended</strong>&nbsp;(smb)</dt>
+<dd>
+
+<p>
+Turn off extended security negotiations for this connection.
+</p>
+<p>
+There are a few reasons you might want to do that, the main ones being that
+extended security is going to be marginally slower and it's not going to
+give the same level of information in some cases (namely, it doesn't present
+the server's name).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB state table.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="file_delete"></a><strong>file_delete</strong>&nbsp;(host, share, remotefile)</dt>
+<dd>
+
+<p>
+Delete a file from the remote machine</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to upload it to (eg, C$).
+          
+	</li>
+	
+	<li>
+	  remotefile:
+          
+            The remote file on the machine. It is relative to the share's root. It can be a string, or an array.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, err) If status is false, err is an error message. Otherwise, err is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="file_read"></a><strong>file_read</strong>&nbsp;(host, share, remotefile, use_anonymous, overrides)</dt>
+<dd>
+
+<p>
+Write given data to the remote machine on the given share. This is similar to <code>file_upload</code>, except the
+data is given as a string, not a file.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to read it from (eg, C$).
+          
+	</li>
+	
+	<li>
+	  remotefile:
+          
+            The remote file on the machine. It is relative to the share's root.
+          
+	</li>
+	
+	<li>
+	  use_anonymous:
+          
+            [optional] If set to 'true', test is done by the anonymous user rather than the current user.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] Override various fields in the SMB packets.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, err) If status is false, err is an error message. Otherwise, err is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="file_upload"></a><strong>file_upload</strong>&nbsp;(host, localfile, share, remotefile, overrides, encoded)</dt>
+<dd>
+
+<p>
+Upload a file from the local machine to the remote machine, on the given share.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  localfile:
+          
+            The file on the local machine, relative to the nmap path
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to upload it to (eg, C$).
+          
+	</li>
+	
+	<li>
+	  remotefile:
+          
+            The remote file on the machine. It is relative to the share's root.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            A table of override values that's passed to the smb functions.
+          
+	</li>
+	
+	<li>
+	  encoded:
+          
+            Set to 'true' if the file is encoded (xor'ed with 0xFF), It will be decoded before upload. Default: false
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, err) If status is false, err is an error message. Otherwise, err is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="file_write"></a><strong>file_write</strong>&nbsp;(host, data, share, remotefile, use_anonymous)</dt>
+<dd>
+
+<p>
+Write given data to the remote machine on the given share. This is similar to <code>file_upload</code>, except the
+data is given as a string, not a file.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  data:
+          
+            The string containing the data to be written
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to upload it to (eg, C$).
+          
+	</li>
+	
+	<li>
+	  remotefile:
+          
+            The remote file on the machine. It is relative to the share's root.
+          
+	</li>
+	
+	<li>
+	  use_anonymous:
+          
+            [optional] If set to 'true', test is done by the anonymous user rather than the current user.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, err) If status is false, err is an error message. Otherwise, err is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="files_exist"></a><strong>files_exist</strong>&nbsp;(host, share, files, overrides)</dt>
+<dd>
+
+<p>
+Check how many files, in a given list, exist on the given share.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to read it from (eg, C$).
+          
+	</li>
+	
+	<li>
+	  files:
+          
+            A list of files to look for; it is relative to the share's root.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] Override various fields in the SMB packets.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>status: A true/false value indicating success</li>
+	
+	<li>count:  The number of files that existed, or an error message if status is 'false'</li>
+	
+	<li>files:  A list of the files that existed.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="find_files"></a><strong>find_files</strong>&nbsp;(smbstate, fname, options)</dt>
+<dd>
+
+<p>
+List files based on a pattern within a given share and directory</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smbstate:
+          
+            the SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  fname:
+          
+            filename to search for, relative to share path
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            table containing none or more of the following
+       <code>srch_attrs</code> table containing one or more of the following boolean attributes:
+             <code>ro</code> - find read only files
+             <code>hidden</code> - find hidden files
+             <code>system</code> - find system files
+             <code>volid</code> - include volume ids in result
+             <code>dir</code> - find directories
+             <code>archive</code> - find archived files
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+iterator function retrieving the next result
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_account"></a><strong>get_account</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Wrapper around <code>smbauth.get_account</code>.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_fqpn"></a><strong>get_fqpn</strong>&nbsp;(host, sharename)</dt>
+<dd>
+
+<p>
+Returns the fully qualified path name (FQPN) for shares.
+This is required for modern versions of Windows.
+Returns \\&lt;ip&gt;\&lt;sharename&gt; when successful. Otherwise, returns the same share name.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+	</li>
+	
+	<li>
+	  sharename:
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_os"></a><strong>get_os</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Retrieve information about the host's operating system. This should always be possible to call, as long as there isn't already
+a SMB session established.
+</p>
+<p>
+The returned table has the following keys (shown here with sample values).
+<ul>
+<li><code>os</code>: <code>"Windows 7 Professional 7601 Service Pack 1"</code>
+</li>
+<li><code>lanmanager</code>: <code>"Windows 7 Professional 6.1"</code>
+</li>
+<li><code>domain</code>: <code>"WORKGROUP"</code>
+</li>
+<li><code>server</code>: <code>"COMPUTERNAME"</code>
+</li>
+<li><code>time</code>: <code>1347121470.0462</code>
+</li>
+<li><code>date</code>: <code>"2012-09-08 09:24:30"</code>
+</li>
+<li><code>timezone</code>: <code>-7</code>
+</li>
+<li><code>timezone_str</code>: <code>UTC-7</code>
+</li>
+<li><code>port</code>: <code>445</code>
+</li>
+</ul>
+The table may also contain these additional keys:
+<ul>
+<li><code>fqdn</code>: <code>"Sql2008.lab.test.local"</code>
+</li>
+<li><code>domain_dns</code>: <code>"lab.test.local"</code>
+</li>
+<li><code>forest_dns</code>: <code>"test.local"</code>
+</li>
+<li><code>workgroup</code></li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, data) If status is true, data is a table of values; otherwise, data is an error message.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_overrides"></a><strong>get_overrides</strong>&nbsp;(username, domain, password, password_hash, hash_type, overrides)</dt>
+<dd>
+
+<p>
+Create an 'overrides' table</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  username:
+          
+	</li>
+	
+	<li>
+	  domain:
+          
+	</li>
+	
+	<li>
+	  password:
+          
+	</li>
+	
+	<li>
+	  password_hash:
+          
+	</li>
+	
+	<li>
+	  hash_type:
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_overrides_anonymous"></a><strong>get_overrides_anonymous</strong>&nbsp;(overrides)</dt>
+<dd>
+
+<p>
+Get an 'overrides' table for the anonymous user</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  overrides:
+          
+            [optional] A base table of overrides. The appropriate fields will be added.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_port"></a><strong>get_port</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Determines whether or not SMB checks are possible on this host, and, if they are,
+ which port is best to use. This is how it decides:
+</p>
+<p>
+<ul>
+<li>If port tcp/445 is open, use it for a raw connection
+</li>
+<li>Otherwise, if ports tcp/139 and udp/137 are open, do a NetBIOS connection. Since UDP scanning isn't default, we're also ok with udp/137 in an unknown state.</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+The port number to use, or nil if we don't have an SMB port
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_socket_info"></a><strong>get_socket_info</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Basically a wrapper around <code>socket:get_info</code>, except that it also makes a SMB connection before calling the
+<code>get_info</code> function. Returns the mac address as well, for convenience.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>status: true for successful, false otherwise.</li>
+	
+	<li>If status is true, the local ip address; otherwise, an error message.</li>
+	
+	<li>The local port (not really meaningful, since it'll change next time).</li>
+	
+	<li>The remote ip address.</li>
+	
+	<li>The report port.</li>
+	
+	<li>The mac address, if possible; nil otherwise.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_status_name"></a><strong>get_status_name</strong>&nbsp;(status)</dt>
+<dd>
+
+<p>
+Convert a status number from the SMB header into a status name, returning an error message (not nil) if
+it wasn't found.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  status:
+          
+            The numerical status.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A string representing the error. Never nil.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_uniqueish_name"></a><strong>get_uniqueish_name</strong>&nbsp;(host, extension, seed)</dt>
+<dd>
+
+<p>
+Generate a string that's somewhat unique, but is based on factors that won't
+change on a host.
+</p>
+<p>
+At the moment, this is a very simple hash based on the IP address. This hash
+is *very* likely to have collisions, and that's by design -- while it should
+be somewhat unique, I don't want it to be trivial to uniquely determine who
+it originated from.
+</p>
+<p>
+TODO: At some point, I should re-do this function properly, with a method of
+hashing that's somewhat proven.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  extension:
+          
+            [optional] The extension to add on the end of the file.
+                Default: none.
+          
+	</li>
+	
+	<li>
+	  seed:
+          
+            [optional] Some randomness on which to base the name. If you want
+           to do multiple files, each with its own uniqueish name, this can
+           be used.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, data) If status is true, data is a table of values;
+       otherwise, data is an error message. Can be any kind of string.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_windows_version"></a><strong>get_windows_version</strong>&nbsp;(os)</dt>
+<dd>
+
+<p>
+Converts numbered Windows version strings (<code>"Windows 5.0"</code>, <code>"Windows 5.1"</code>) to names (<code>"Windows 2000"</code>, <code>"Windows XP"</code>).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  os:
+          
+            The numbered OS version.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+The actual name of the OS (or the same as the <code>os</code> parameter if no match was found).
+
+
+
+</dd>
+
+
+
+
+<dt><a name="is_admin"></a><strong>is_admin</strong>&nbsp;(host, username, domain, password, password_hash, hash_type)</dt>
+<dd>
+
+<p>
+Determines, as accurately as possible, whether or not an account is an administrator. If there is an error,
+'false' is simply returned.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+	</li>
+	
+	<li>
+	  username:
+          
+	</li>
+	
+	<li>
+	  domain:
+          
+	</li>
+	
+	<li>
+	  password:
+          
+	</li>
+	
+	<li>
+	  password_hash:
+          
+	</li>
+	
+	<li>
+	  hash_type:
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="list_dialects"></a><strong>list_dialects</strong>&nbsp;(host, overrides)</dt>
+<dd>
+
+<p>
+Returns list of supported dialects for SMBv1, SMBv2 and SMBv3.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The SMB host to connect to.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] Overrides for various fields.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>Boolean status</li>
+	
+	<li>Table of supported dialects or error message</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="logoff"></a><strong>logoff</strong>&nbsp;(smb, overrides)</dt>
+<dd>
+
+<p>
+Logs off the current user. Strictly speaking this isn't necessary, but it's the polite thing to do.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            THe overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. If status is true,
+             the logoff was successful.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="negotiate_protocol"></a><strong>negotiate_protocol</strong>&nbsp;(smb, overrides)</dt>
+<dd>
+
+<p>
+Wrapper function to negotiate the protocol to use in the SMB connection.
+By default it attempts to negotiate with using following dialects:
+<ul>
+<li>NT LM 12.0 (SMBv1)</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            Overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Boolean status
+
+
+
+</dd>
+
+
+
+
+<dt><a name="negotiate_v1"></a><strong>negotiate_v1</strong>&nbsp;(smb, overrides)</dt>
+<dd>
+
+<p>
+Negotiates SMBv1 connections
+</p>
+<p>
+Sends the following:
+<ul>
+<li>List of known protocols
+</li>
+</ul>
+</p>
+<p>
+This function adds to <code>smb</code>:
+<ul>
+<li>'security_mode'    Whether or not to use cleartext passwords, message signatures, etc.
+</li>
+<li>'max_mpx'          Maximum number of multiplexed connections
+</li>
+<li>'max_vc'           Maximum number of virtual circuits
+</li>
+<li>'max_buffer'       Maximum buffer size
+</li>
+<li>'max_raw_buffer'   Maximum buffer size for raw connections (considered obsolete)
+</li>
+<li>'session_key'      A value that's basically just echoed back
+</li>
+<li>'capabilities'     The server's capabilities
+</li>
+<li>'time'             The server's time (in UNIX-style seconds since 1970)
+</li>
+<li>'date'             The server's date in a user-readable format
+</li>
+<li>'timezone'         The server's timezone, in hours from UTC
+</li>
+<li>'timezone_str'     The server's timezone, as a string
+</li>
+<li>'server_challenge' A random string used for challenge/response
+</li>
+<li>'domain'           The server's primary domain or workgroup
+</li>
+<li>'server'           The server's name</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            Overrides table.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>Boolean status</li>
+	
+	<li>The negotiated dialect in human readable form or an error message.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="read_file"></a><strong>read_file</strong>&nbsp;(smb, offset, count, overrides)</dt>
+<dd>
+
+<p>
+This sends a SMB request to read from a file (or a pipe).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  offset:
+          
+            The offset to read from (ignored if it's a pipe)
+          
+	</li>
+	
+	<li>
+	  count:
+          
+            The maximum number of bytes to read
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a table
+       containing a lot of different elements.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="send_transaction_named_pipe"></a><strong>send_transaction_named_pipe</strong>&nbsp;(smb, function_parameters, function_data, pipe, no_setup, overrides)</dt>
+<dd>
+
+<p>
+This is the core of making MSRPC calls. It sends out a MSRPC packet with the
+given parameters and data.
+</p>
+<p>
+Don't confuse these parameters and data with SMB's concepts of parameters
+and data -- they are completely different. In fact, these parameters and
+data are both sent in the SMB packet's 'data' section.
+</p>
+<p>
+It is probably best to think of this as another protocol layer. This
+function will wrap SMB stuff around a MSRPC call, make the call, then unwrap
+the SMB stuff from it before returning.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  function_parameters:
+          
+            The parameter data to pass to the function. This
+                          is untested, since none of the transactions I've
+                          done have required parameters.
+          
+	</li>
+	
+	<li>
+	  function_data:
+          
+            The data to send with the packet. This is basically the
+                    next protocol layer
+          
+	</li>
+	
+	<li>
+	  pipe:
+          
+            [optional] The pipe to transact on. Default: "\PIPE\".
+          
+	</li>
+	
+	<li>
+	  no_setup:
+          
+            [optional] If set, the 'setup' is set to 0 and some
+               parameters are left off. This occurs while using the LANMAN
+               Remote API. Default: false.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message.
+       Otherwise, result is a table containing 'parameters' and 'data',
+       representing the parameters and data returned by the server.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_anonymous_can_read"></a><strong>share_anonymous_can_read</strong>&nbsp;(host, share)</dt>
+<dd>
+
+<p>
+Check whether or not a share is accessible by the anonymous user. Assumes that <code>share_host_returns_proper_error</code>
+has been called and returns <code>true</code>.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to test
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a boolean value:
+       true if anonymous access is permitted, false otherwise.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_anonymous_can_write"></a><strong>share_anonymous_can_write</strong>&nbsp;(host, share)</dt>
+<dd>
+
+<p>
+Determine whether or not the anonymous user has write access on the share. This is done by creating then
+deleting a file.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to test
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. The error message 'NT_STATUS_OBJECT_NAME_NOT_FOUND'
+       should be handled gracefully; it indicates that the share isn't a fileshare. Otherwise, result is a boolean value:
+       true if the file was successfully written, false if it was not.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_find_writable"></a><strong>share_find_writable</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Find a share that the current user can write to. Return it, along with its path. If no share could be found,
+an error is returned. If the path cannot be determined, the returned path is nil.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, name, path, names) If status is false, result is an error message. Otherwise, name is the name of the share,
+       path is its path, if it could be determined, and names is a list of all writable shares.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_get_details"></a><strong>share_get_details</strong>&nbsp;(host, share)</dt>
+<dd>
+
+<p>
+Get all the details we can about the share. These details are stored in a table and returned.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            An array of shares to check.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a boolean value:
+       true if the file was successfully written, false if it was not.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_get_list"></a><strong>share_get_list</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Retrieve a list of fileshares, along with any details that could be pulled. This is the core of smb-enum-shares.nse, but
+can also be used by any script that needs to find an open share.
+</p>
+<p>
+In the best care, the shares are determined by calling <code>msrpc.enum_shares</code>, and information is gathered by calling
+<code>msrpc.get_share_info</code>. These require a certain level of access, though, so as a fallback, a pre-programmed list of
+shares is used, and these are verified by attempting a connection.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result, extra) If status is false, result is an error message. Otherwise, result is an array of shares with as much
+       detail as we could get. If extra isn't nil, it is set to extra information that should be displayed (such as a warning).
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_host_returns_proper_error"></a><strong>share_host_returns_proper_error</strong>&nbsp;(host, use_anonymous)</dt>
+<dd>
+
+<p>
+Determine whether or not a host will accept any share name (I've seen this on certain systems; it's
+bad, because it means we cannot tell whether or not a share exists).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  use_anonymous:
+          
+            [optional] If set to 'true', test is done by the anonymous user rather than the current user.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a boolean value:
+       true if the file was successfully written, false if it was not.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_user_can_read"></a><strong>share_user_can_read</strong>&nbsp;(host, share)</dt>
+<dd>
+
+<p>
+Check whether or not a share is accessible by the current user. Assumes that <code>share_host_returns_proper_error</code>
+has been called and returns <code>true</code>.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to test
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a boolean value:
+       true if anonymous access is permitted, false otherwise.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="share_user_can_write"></a><strong>share_user_can_write</strong>&nbsp;(host, share)</dt>
+<dd>
+
+<p>
+Determine whether or not the current user has read or read/write access on the share. This is done by creating then
+deleting a file.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+	<li>
+	  share:
+          
+            The share to test
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. The error message 'NT_STATUS_OBJECT_NAME_NOT_FOUND'
+       should be handled gracefully; it indicates that the share isn't a fileshare. Otherwise, result is a boolean value:
+       true if the file was successfully written, false if it was not.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="smb_encode_header"></a><strong>smb_encode_header</strong>&nbsp;(smb, command, overrides)</dt>
+<dd>
+
+<p>
+Creates a string containing a SMB packet header. The header looks like this:
+</p>
+<p>
+<pre>--------------------------------------------------------------------------------------------------
+| 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9  8  7  6  5  4  3  2  1  0 |
+--------------------------------------------------------------------------------------------------
+|         0xFF           |          'S'          |        'M'            |         'B'           |
+--------------------------------------------------------------------------------------------------
+|        Command         |                             Status...                                 |
+--------------------------------------------------------------------------------------------------
+|    ...Status           |        Flags          |                    Flags2                     |
+--------------------------------------------------------------------------------------------------
+|                    PID_high                    |                  Signature.....               |
+--------------------------------------------------------------------------------------------------
+|                                        ....Signature....                                       |
+--------------------------------------------------------------------------------------------------
+|              ....Signature                     |                    Unused                     |
+--------------------------------------------------------------------------------------------------
+|                      TID                       |                     PID                       |
+--------------------------------------------------------------------------------------------------
+|                      UID                       |                     MID                       |
+-------------------------------------------------------------------------------------------------</pre>
+</p>
+<p>
+All fields are, incidentally, encoded in little endian byte order.
+</p>
+<p>
+For the purposes here, the program doesn't care about most of the fields so they're given default
+values. The "command" field is the only one we ever have to set manually, in my experience. The TID
+and UID need to be set, but those are stored in the smb state and don't require user intervention.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The smb state table.
+          
+	</li>
+	
+	<li>
+	  command:
+          
+            The command to use.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table. Keep in mind that overriding things like flags is generally a very bad idea, unless you know what you're doing.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A binary string containing the packed packet header.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="smb_read"></a><strong>smb_read</strong>&nbsp;(smb, read_data)</dt>
+<dd>
+
+<p>
+Reads the next packet from the socket, and parses it into the header, parameters,
+ and data.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  read_data:
+          
+            [optional] This function will read the data section if and only if
+      this value is true. This is a workaround for a bug in the tree connect packet,
+      where the length is set incorrectly. Default: true.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, header, parameters, data) If status is true, the header,
+       parameters, and data are all the raw arrays (with the lengths already
+       removed). If status is false, header contains an error message and parameters/
+       data are undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="smb_send"></a><strong>smb_send</strong>&nbsp;(smb, header, parameters, data, overrides)</dt>
+<dd>
+
+<p>
+Prepends the NetBIOS header to the packet, which is essentially the length, encoded
+ in 4 bytes of big endian, and sends it out.
+</p>
+<p>
+ The length field is actually 17 or 24 bits wide, depending on whether or
+ not we're using raw, but that shouldn't matter.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  header:
+          
+            The header, encoded with <code>smb_get_header</code>.
+          
+	</li>
+	
+	<li>
+	  parameters:
+          
+            The parameters.
+          
+	</li>
+	
+	<li>
+	  data:
+          
+            The data.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            Overrides table.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(result, err) If result is false, err is the error message. Otherwise, err is
+       undefined
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start"></a><strong>start</strong>&nbsp;(host)</dt>
+<dd>
+
+<p>
+Begins a SMB session, automatically determining the best way to connect.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, smb) if the status is true, result is the newly crated smb object;
+        otherwise, socket is the error message.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start_ex"></a><strong>start_ex</strong>&nbsp;(host, bool_negotiate_protocol, bool_start_session, str_tree_connect, str_create_file, bool_disable_extended, overrides)</dt>
+<dd>
+
+<p>
+Initiates a SMB connection over whichever port it can, then optionally sends
+the common initialization packets.
+</p>
+<p>
+Note that each packet depends on the previous one, so if you want to go all
+the way up to create_file, you have to set all parameters.
+</p>
+<p>
+If anything fails, we back out of the connection and return an error, so the
+calling function doesn't have to call smb.stop().</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+	<li>
+	  bool_negotiate_protocol:
+          
+            [optional] If 'true', send the protocol
+                              negotiation. Default: false.
+          
+	</li>
+	
+	<li>
+	  bool_start_session:
+          
+            [optional] If 'true', start the session. Default:
+                         false.
+          
+	</li>
+	
+	<li>
+	  str_tree_connect:
+          
+            [optional] The tree to connect to, if given (eg.
+                       "IPC$" or "C$"). If not given, packet isn't sent.
+          
+	</li>
+	
+	<li>
+	  str_create_file:
+          
+            [optional] The path and name of the file (or pipe)
+                      that's created, if given. If not given, packet isn't
+                      sent.
+          
+	</li>
+	
+	<li>
+	  bool_disable_extended:
+          
+            [optional] If set to true, disables extended
+                            security negotiations.
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] A table of overrides (for, for example, username,
+                password, etc.) to pass to all functions.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start_netbios"></a><strong>start_netbios</strong>&nbsp;(host, port, name)</dt>
+<dd>
+
+<p>
+Begins a SMB session over NetBIOS.
+</p>
+<p>
+This requires a NetBIOS Session Start message to be sent first, which in
+turn requires the NetBIOS name. The name can be provided as a parameter, or
+it can be automatically determined.
+</p>
+<p>
+Automatically determining the name is interesting, to say the least. Here
+are the names it tries, and the order it tries them in:
+<ul>
+<li>The name the user provided, if present
+</li>
+<li>The name pulled from NetBIOS (udp/137), if possible
+</li>
+<li>The generic name "*SMBSERVER"
+</li>
+<li>Each subset of the domain name (for example, scanme.insecure.org would
+attempt "scanme", "scanme.insecure", and "scanme.insecure.org")
+</li>
+</ul>
+</p>
+<p>
+This whole sequence is a little hackish, but it's the standard way of doing
+it.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object to check.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to use (most likely 139).
+          
+	</li>
+	
+	<li>
+	  name:
+          
+            [optional] The NetBIOS name of the host. Will attempt to
+           automatically determine if it isn't given.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, socket) if status is true, result is the port
+       Otherwise, socket is the error message.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start_raw"></a><strong>start_raw</strong>&nbsp;(host, port)</dt>
+<dd>
+
+<p>
+Begins a raw SMB session, likely over port 445. Since nothing extra is required, this
+ function simply makes a connection and returns the socket.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object to check.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to use (most likely 445).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, socket) if status is true, result is the newly created socket.
+       Otherwise, socket is the error message.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="start_session"></a><strong>start_session</strong>&nbsp;(smb, overrides, log_errors)</dt>
+<dd>
+
+<p>
+Sends out SMB_COM_SESSION_SETUP_ANDX, which attempts to log a user in.
+</p>
+<p>
+Sends the following:
+<ul>
+<li>Negotiated parameters (multiplexed connections, virtual circuit, capabilities)
+</li>
+<li>Passwords (plaintext, unicode, lanman, ntlm, lmv2, ntlmv2, etc)
+</li>
+<li>Account name
+</li>
+<li>OS (I just send "Nmap")
+</li>
+<li>Native LAN Manager (no clue what that is, but it seems to be ignored)
+</li>
+</ul>
+</p>
+<p>
+Receives the following:
+<ul>
+<li>User ID
+</li>
+<li>Server OS</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] A table of overrides for username, domain, password, password_hash, and hash_type.
+                   If any of these are given, it's used first. If they aren't, then Nmap parameters, Nmap registry entries,
+                   guest, and NULL sessions are used.
+          
+	</li>
+	
+	<li>
+	  log_errors:
+          
+            [optional] If set, will display login. Default: true.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is nil and the following
+       elements are added to the smb table:
+   *  'uid'         The UserID for the session
+   *  'is_guest'    If set, the username wasn't found so the user was automatically logged in as the guest account
+   *  'os'          The operating system
+   *  'lanmanager'  The server's LAN Manager
+
+
+
+</dd>
+
+
+
+
+<dt><a name="stop"></a><strong>stop</strong>&nbsp;(smb)</dt>
+<dd>
+
+<p>
+Kills the SMB connection and closes the socket.
+</p>
+<p>
+ In addition to killing the connection, this function will log off the user and disconnect
+ the connected tree, if possible.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result
+       is undefined.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="tree_connect"></a><strong>tree_connect</strong>&nbsp;(smb, path, overrides)</dt>
+<dd>
+
+<p>
+Sends out <code>SMB_COM_SESSION_TREE_CONNECT_ANDX</code>, which attempts to
+connect to a share.
+</p>
+<p>
+Sends the following:
+<ul>
+<li>Password (for share-level security, which we don't support)
+</li>
+<li>Share name
+</li>
+<li>Share type (or "?????" if it's unknown, that's what we do)
+</li>
+</ul>
+</p>
+<p>
+Receives the following:
+<ul>
+<li>Tree ID</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to connect (eg, <code>"\\servername\C$"</code>)
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            [optional] Overrides for various fields
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a
+       table with the following elements:
+     * 'tid'         The TreeID for the session
+
+
+
+</dd>
+
+
+
+
+<dt><a name="tree_disconnect"></a><strong>tree_disconnect</strong>&nbsp;(smb, overrides)</dt>
+<dd>
+
+<p>
+Disconnects a tree session. Should be called before logging off and disconnecting.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            THe overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. If status is true,
+             the disconnect was successful.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="write_file"></a><strong>write_file</strong>&nbsp;(smb, write_data, offset, overrides)</dt>
+<dd>
+
+<p>
+This sends a SMB request to write to a file (or a pipe).</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  smb:
+          
+            The SMB object associated with the connection
+          
+	</li>
+	
+	<li>
+	  write_data:
+          
+            The data to write
+          
+	</li>
+	
+	<li>
+	  offset:
+          
+            The offset to write it to (ignored for pipes)
+          
+	</li>
+	
+	<li>
+	  overrides:
+          
+            The overrides table
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+(status, result) If status is false, result is an error message. Otherwise, result is a table
+       containing a lot of different elements, the most important one being 'fid', the handle to the opened file.
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+</div> <!-- id="container" -->	
+
+
+<h2 class="purpleheader">Nmap Site Navigation</h2>
+
+<CENTER>
+<!--#include virtual="/shared/templates/nmap_pagemap.html" -->
+</CENTER>
+<!--#include virtual="/shared/templates/standard_body_bottom.html" -->

@@ -1,0 +1,4967 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>http NSE Library</title>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" >
+
+<!--#include virtual="/shared/templates/standard_body_top.html" -->
+
+<!--#include virtual="/shared/templates/nmap_header.html" -->
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="navigation">
+
+
+<style type="text/css">
+.showbutton { text-size: smaller; display: none }
+.hidebutton { text-size: smaller; display: none }
+.jsvisible { display: none }
+</style>
+<script type="text/javascript">
+<!--
+document.write('<style type="text/css">\n\
+.showbutton { display: inline }\n\
+.contents { display: none }\n\
+.jsvisible { display: block }\n\
+.jsinvisible { display: none }\n\
+<\/style>');
+function show_contents(name) {
+	document.getElementById("show-" + name).style.display = "none";
+	document.getElementById("hide-" + name).style.display = "inline";
+	document.getElementById("contents-" + name).style.display = "block";
+}
+function hide_contents(name) {
+	document.getElementById("show-" + name).style.display = "inline";
+	document.getElementById("hide-" + name).style.display = "none";
+	document.getElementById("contents-" + name).style.display = "none";
+}
+function toggle_contents(name) {
+	elem = document.getElementById("contents-" + name)
+	if (elem.style.display == "block") {
+		hide_contents(name);
+	} else {
+		show_contents(name);
+	}
+}
+-->
+</script>
+
+<h1>NSEDoc</h1>
+<ul>
+	
+	<li><a href="../index.html">Index</a></li>
+	
+	<li><a href="/book/nse.html">NSE Documentation</a></li>
+</ul>
+
+
+<!-- Category list -->
+<h1>Categories</h1>
+<ul>
+
+  
+  <li>
+    <a href="../categories/auth.html">
+      auth
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/broadcast.html">
+      broadcast
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/brute.html">
+      brute
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/default.html">
+      default
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/discovery.html">
+      discovery
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/dos.html">
+      dos
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/exploit.html">
+      exploit
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/external.html">
+      external
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/fuzzer.html">
+      fuzzer
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/intrusive.html">
+      intrusive
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/malware.html">
+      malware
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/safe.html">
+      safe
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/version.html">
+      version
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="../categories/vuln.html">
+      vuln
+    </a>
+  </li>
+  
+
+</ul>
+
+<!-- Script list -->
+
+<h1><span class="jsvisible"><a href="javascript:toggle_contents('scripts')">Scripts <span id="show-scripts" class="showbutton">(show 588)</span><span id="hide-scripts" class="hidebutton">(588)</span></a></span><span class="jsinvisible">Scripts (588)</span></h1>
+<ul id="contents-scripts" class="contents">
+
+	<li>
+		<a href="../scripts/acarsd-info.html">acarsd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/address-info.html">address-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-brute.html">afp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-ls.html">afp-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-path-vuln.html">afp-path-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-serverinfo.html">afp-serverinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/afp-showmount.html">afp-showmount</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-auth.html">ajp-auth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-brute.html">ajp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-headers.html">ajp-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-methods.html">ajp-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ajp-request.html">ajp-request</a>
+	</li>
+
+	<li>
+		<a href="../scripts/allseeingeye-info.html">allseeingeye-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/amqp-info.html">amqp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/asn-query.html">asn-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/auth-owners.html">auth-owners</a>
+	</li>
+
+	<li>
+		<a href="../scripts/auth-spoof.html">auth-spoof</a>
+	</li>
+
+	<li>
+		<a href="../scripts/backorifice-brute.html">backorifice-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/backorifice-info.html">backorifice-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bacnet-info.html">bacnet-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/banner.html">banner</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoin-getaddr.html">bitcoin-getaddr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoin-info.html">bitcoin-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bitcoinrpc-info.html">bitcoinrpc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bittorrent-discovery.html">bittorrent-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/bjnp-discover.html">bjnp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ataoe-discover.html">broadcast-ataoe-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-avahi-dos.html">broadcast-avahi-dos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-bjnp-discover.html">broadcast-bjnp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-db2-discover.html">broadcast-db2-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dhcp-discover.html">broadcast-dhcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dhcp6-discover.html">broadcast-dhcp6-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dns-service-discovery.html">broadcast-dns-service-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-dropbox-listener.html">broadcast-dropbox-listener</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-eigrp-discovery.html">broadcast-eigrp-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-igmp-discovery.html">broadcast-igmp-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-listener.html">broadcast-listener</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ms-sql-discover.html">broadcast-ms-sql-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-netbios-master-browser.html">broadcast-netbios-master-browser</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-networker-discover.html">broadcast-networker-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-novell-locate.html">broadcast-novell-locate</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ospf2-discover.html">broadcast-ospf2-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pc-anywhere.html">broadcast-pc-anywhere</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pc-duo.html">broadcast-pc-duo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pim-discovery.html">broadcast-pim-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ping.html">broadcast-ping</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-pppoe-discover.html">broadcast-pppoe-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-rip-discover.html">broadcast-rip-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-ripng-discover.html">broadcast-ripng-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-sonicwall-discover.html">broadcast-sonicwall-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-sybase-asa-discover.html">broadcast-sybase-asa-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-tellstick-discover.html">broadcast-tellstick-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-upnp-info.html">broadcast-upnp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-versant-locate.html">broadcast-versant-locate</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wake-on-lan.html">broadcast-wake-on-lan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wpad-discover.html">broadcast-wpad-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-wsdd-discover.html">broadcast-wsdd-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/broadcast-xdmcp-discover.html">broadcast-xdmcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cassandra-brute.html">cassandra-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cassandra-info.html">cassandra-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cccam-version.html">cccam-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-enum.html">cics-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-info.html">cics-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-user-brute.html">cics-user-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cics-user-enum.html">cics-user-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-brute-xml.html">citrix-brute-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-apps.html">citrix-enum-apps</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-apps-xml.html">citrix-enum-apps-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-servers.html">citrix-enum-servers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/citrix-enum-servers-xml.html">citrix-enum-servers-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/clamav-exec.html">clamav-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/clock-skew.html">clock-skew</a>
+	</li>
+
+	<li>
+		<a href="../scripts/coap-resources.html">coap-resources</a>
+	</li>
+
+	<li>
+		<a href="../scripts/couchdb-databases.html">couchdb-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/couchdb-stats.html">couchdb-stats</a>
+	</li>
+
+	<li>
+		<a href="../scripts/creds-summary.html">creds-summary</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cups-info.html">cups-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cups-queue-info.html">cups-queue-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cvs-brute.html">cvs-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/cvs-brute-repository.html">cvs-brute-repository</a>
+	</li>
+
+	<li>
+		<a href="../scripts/daap-get-library.html">daap-get-library</a>
+	</li>
+
+	<li>
+		<a href="../scripts/daytime.html">daytime</a>
+	</li>
+
+	<li>
+		<a href="../scripts/db2-das-info.html">db2-das-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/deluge-rpc-brute.html">deluge-rpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dhcp-discover.html">dhcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dict-info.html">dict-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/distcc-cve2004-2687.html">distcc-cve2004-2687</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-blacklist.html">dns-blacklist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-brute.html">dns-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-cache-snoop.html">dns-cache-snoop</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-check-zone.html">dns-check-zone</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-client-subnet-scan.html">dns-client-subnet-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-fuzz.html">dns-fuzz</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-ip6-arpa-scan.html">dns-ip6-arpa-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsec-enum.html">dns-nsec-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsec3-enum.html">dns-nsec3-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-nsid.html">dns-nsid</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-random-srcport.html">dns-random-srcport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-random-txid.html">dns-random-txid</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-recursion.html">dns-recursion</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-service-discovery.html">dns-service-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-srv-enum.html">dns-srv-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-update.html">dns-update</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-zeustracker.html">dns-zeustracker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dns-zone-transfer.html">dns-zone-transfer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/docker-version.html">docker-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domcon-brute.html">domcon-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domcon-cmd.html">domcon-cmd</a>
+	</li>
+
+	<li>
+		<a href="../scripts/domino-enum-users.html">domino-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/dpap-brute.html">dpap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/drda-brute.html">drda-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/drda-info.html">drda-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/duplicates.html">duplicates</a>
+	</li>
+
+	<li>
+		<a href="../scripts/eap-info.html">eap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/enip-info.html">enip-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/epmd-info.html">epmd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/eppc-enum-processes.html">eppc-enum-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fcrdns.html">fcrdns</a>
+	</li>
+
+	<li>
+		<a href="../scripts/finger.html">finger</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fingerprint-strings.html">fingerprint-strings</a>
+	</li>
+
+	<li>
+		<a href="../scripts/firewalk.html">firewalk</a>
+	</li>
+
+	<li>
+		<a href="../scripts/firewall-bypass.html">firewall-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/flume-master-info.html">flume-master-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/fox-info.html">fox-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/freelancer-info.html">freelancer-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-anon.html">ftp-anon</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-bounce.html">ftp-bounce</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-brute.html">ftp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-libopie.html">ftp-libopie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-proftpd-backdoor.html">ftp-proftpd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-syst.html">ftp-syst</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-vsftpd-backdoor.html">ftp-vsftpd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ftp-vuln-cve2010-4221.html">ftp-vuln-cve2010-4221</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ganglia-info.html">ganglia-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/giop-info.html">giop-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gkrellm-info.html">gkrellm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gopher-ls.html">gopher-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/gpsd-info.html">gpsd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-datanode-info.html">hadoop-datanode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-jobtracker-info.html">hadoop-jobtracker-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-namenode-info.html">hadoop-namenode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-secondary-namenode-info.html">hadoop-secondary-namenode-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hadoop-tasktracker-info.html">hadoop-tasktracker-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hbase-master-info.html">hbase-master-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hbase-region-info.html">hbase-region-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hddtemp-info.html">hddtemp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hnap-info.html">hnap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-bfk.html">hostmap-bfk</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-crtsh.html">hostmap-crtsh</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-ip2hosts.html">hostmap-ip2hosts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/hostmap-robtex.html">hostmap-robtex</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-adobe-coldfusion-apsa1301.html">http-adobe-coldfusion-apsa1301</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-affiliate-id.html">http-affiliate-id</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-apache-negotiation.html">http-apache-negotiation</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-apache-server-status.html">http-apache-server-status</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-aspnet-debug.html">http-aspnet-debug</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-auth.html">http-auth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-auth-finder.html">http-auth-finder</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-avaya-ipoffice-users.html">http-avaya-ipoffice-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-awstatstotals-exec.html">http-awstatstotals-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-axis2-dir-traversal.html">http-axis2-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-backup-finder.html">http-backup-finder</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-barracuda-dir-traversal.html">http-barracuda-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-bigip-cookie.html">http-bigip-cookie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-brute.html">http-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cakephp-version.html">http-cakephp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-chrono.html">http-chrono</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cisco-anyconnect.html">http-cisco-anyconnect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-coldfusion-subzero.html">http-coldfusion-subzero</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-comments-displayer.html">http-comments-displayer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-config-backup.html">http-config-backup</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cookie-flags.html">http-cookie-flags</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cors.html">http-cors</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-cross-domain-policy.html">http-cross-domain-policy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-csrf.html">http-csrf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-date.html">http-date</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-default-accounts.html">http-default-accounts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-devframework.html">http-devframework</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-dlink-backdoor.html">http-dlink-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-dombased-xss.html">http-dombased-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-domino-enum-passwords.html">http-domino-enum-passwords</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-drupal-enum.html">http-drupal-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-drupal-enum-users.html">http-drupal-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-enum.html">http-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-errors.html">http-errors</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-exif-spider.html">http-exif-spider</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-favicon.html">http-favicon</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-feed.html">http-feed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-fetch.html">http-fetch</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-fileupload-exploiter.html">http-fileupload-exploiter</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-form-brute.html">http-form-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-form-fuzzer.html">http-form-fuzzer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-frontpage-login.html">http-frontpage-login</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-generator.html">http-generator</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-git.html">http-git</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-gitweb-projects-enum.html">http-gitweb-projects-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-google-malware.html">http-google-malware</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-grep.html">http-grep</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-headers.html">http-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-huawei-hg5xx-vuln.html">http-huawei-hg5xx-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-icloud-findmyiphone.html">http-icloud-findmyiphone</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-icloud-sendmsg.html">http-icloud-sendmsg</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-iis-short-name-brute.html">http-iis-short-name-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-iis-webdav-vuln.html">http-iis-webdav-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-internal-ip-disclosure.html">http-internal-ip-disclosure</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-joomla-brute.html">http-joomla-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-jsonp-detection.html">http-jsonp-detection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-litespeed-sourcecode-download.html">http-litespeed-sourcecode-download</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-ls.html">http-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-majordomo2-dir-traversal.html">http-majordomo2-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-malware-host.html">http-malware-host</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-mcmp.html">http-mcmp</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-method-tamper.html">http-method-tamper</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-methods.html">http-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-mobileversion-checker.html">http-mobileversion-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-ntlm-info.html">http-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-open-proxy.html">http-open-proxy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-open-redirect.html">http-open-redirect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-passwd.html">http-passwd</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-php-version.html">http-php-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-phpmyadmin-dir-traversal.html">http-phpmyadmin-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-phpself-xss.html">http-phpself-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-proxy-brute.html">http-proxy-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-put.html">http-put</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-qnap-nas-info.html">http-qnap-nas-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-referer-checker.html">http-referer-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-rfi-spider.html">http-rfi-spider</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robots.txt.html">http-robots.txt</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robtex-reverse-ip.html">http-robtex-reverse-ip</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-robtex-shared-ns.html">http-robtex-shared-ns</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-security-headers.html">http-security-headers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-server-header.html">http-server-header</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-shellshock.html">http-shellshock</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-sitemap-generator.html">http-sitemap-generator</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-slowloris.html">http-slowloris</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-slowloris-check.html">http-slowloris-check</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-sql-injection.html">http-sql-injection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-stored-xss.html">http-stored-xss</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-svn-enum.html">http-svn-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-svn-info.html">http-svn-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-title.html">http-title</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-tplink-dir-traversal.html">http-tplink-dir-traversal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-trace.html">http-trace</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-traceroute.html">http-traceroute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-trane-info.html">http-trane-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-unsafe-output-escaping.html">http-unsafe-output-escaping</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-useragent-tester.html">http-useragent-tester</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-userdir-enum.html">http-userdir-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vhosts.html">http-vhosts</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-virustotal.html">http-virustotal</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vlcstreamer-ls.html">http-vlcstreamer-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vmware-path-vuln.html">http-vmware-path-vuln</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2006-3392.html">http-vuln-cve2006-3392</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2009-3960.html">http-vuln-cve2009-3960</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2010-0738.html">http-vuln-cve2010-0738</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2010-2861.html">http-vuln-cve2010-2861</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2011-3192.html">http-vuln-cve2011-3192</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2011-3368.html">http-vuln-cve2011-3368</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2012-1823.html">http-vuln-cve2012-1823</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-0156.html">http-vuln-cve2013-0156</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-6786.html">http-vuln-cve2013-6786</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2013-7091.html">http-vuln-cve2013-7091</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2126.html">http-vuln-cve2014-2126</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2127.html">http-vuln-cve2014-2127</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2128.html">http-vuln-cve2014-2128</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-2129.html">http-vuln-cve2014-2129</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-3704.html">http-vuln-cve2014-3704</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2014-8877.html">http-vuln-cve2014-8877</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2015-1427.html">http-vuln-cve2015-1427</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2015-1635.html">http-vuln-cve2015-1635</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-1001000.html">http-vuln-cve2017-1001000</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-5638.html">http-vuln-cve2017-5638</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-5689.html">http-vuln-cve2017-5689</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-cve2017-8917.html">http-vuln-cve2017-8917</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-misfortune-cookie.html">http-vuln-misfortune-cookie</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-vuln-wnr1000-creds.html">http-vuln-wnr1000-creds</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-waf-detect.html">http-waf-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-waf-fingerprint.html">http-waf-fingerprint</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-webdav-scan.html">http-webdav-scan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-brute.html">http-wordpress-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-enum.html">http-wordpress-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-wordpress-users.html">http-wordpress-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/http-xssed.html">http-xssed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iax2-brute.html">iax2-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iax2-version.html">iax2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/icap-info.html">icap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iec-identify.html">iec-identify</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ike-version.html">ike-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-brute.html">imap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-capabilities.html">imap-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/imap-ntlm-info.html">imap-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/impress-remote-discover.html">impress-remote-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-brute.html">informix-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-query.html">informix-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/informix-tables.html">informix-tables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-forwarding.html">ip-forwarding</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-geoplugin.html">ip-geolocation-geoplugin</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-ipinfodb.html">ip-geolocation-ipinfodb</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-bing.html">ip-geolocation-map-bing</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-google.html">ip-geolocation-map-google</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-map-kml.html">ip-geolocation-map-kml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-geolocation-maxmind.html">ip-geolocation-maxmind</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ip-https-discover.html">ip-https-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipidseq.html">ipidseq</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-brute.html">ipmi-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-cipher-zero.html">ipmi-cipher-zero</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipmi-version.html">ipmi-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-multicast-mld-list.html">ipv6-multicast-mld-list</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-node-info.html">ipv6-node-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ipv6-ra-flood.html">ipv6-ra-flood</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-botnet-channels.html">irc-botnet-channels</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-brute.html">irc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-info.html">irc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-sasl-brute.html">irc-sasl-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/irc-unrealircd-backdoor.html">irc-unrealircd-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iscsi-brute.html">iscsi-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/iscsi-info.html">iscsi-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/isns-info.html">isns-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-exec.html">jdwp-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-info.html">jdwp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-inject.html">jdwp-inject</a>
+	</li>
+
+	<li>
+		<a href="../scripts/jdwp-version.html">jdwp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/knx-gateway-discover.html">knx-gateway-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/knx-gateway-info.html">knx-gateway-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/krb5-enum-users.html">krb5-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-brute.html">ldap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-novell-getpass.html">ldap-novell-getpass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-rootdse.html">ldap-rootdse</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ldap-search.html">ldap-search</a>
+	</li>
+
+	<li>
+		<a href="../scripts/lexmark-config.html">lexmark-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/llmnr-resolve.html">llmnr-resolve</a>
+	</li>
+
+	<li>
+		<a href="../scripts/lltd-discovery.html">lltd-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/maxdb-info.html">maxdb-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mcafee-epo-agent.html">mcafee-epo-agent</a>
+	</li>
+
+	<li>
+		<a href="../scripts/membase-brute.html">membase-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/membase-http-info.html">membase-http-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/memcached-info.html">memcached-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-info.html">metasploit-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-msgrpc-brute.html">metasploit-msgrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/metasploit-xmlrpc-brute.html">metasploit-xmlrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mikrotik-routeros-brute.html">mikrotik-routeros-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mmouse-brute.html">mmouse-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mmouse-exec.html">mmouse-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/modbus-discover.html">modbus-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-brute.html">mongodb-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-databases.html">mongodb-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mongodb-info.html">mongodb-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mqtt-subscribe.html">mqtt-subscribe</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mrinfo.html">mrinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-brute.html">ms-sql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-config.html">ms-sql-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-dac.html">ms-sql-dac</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-dump-hashes.html">ms-sql-dump-hashes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-empty-password.html">ms-sql-empty-password</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-hasdbaccess.html">ms-sql-hasdbaccess</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-info.html">ms-sql-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-ntlm-info.html">ms-sql-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-query.html">ms-sql-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-tables.html">ms-sql-tables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ms-sql-xp-cmdshell.html">ms-sql-xp-cmdshell</a>
+	</li>
+
+	<li>
+		<a href="../scripts/msrpc-enum.html">msrpc-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mtrace.html">mtrace</a>
+	</li>
+
+	<li>
+		<a href="../scripts/murmur-version.html">murmur-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-audit.html">mysql-audit</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-brute.html">mysql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-databases.html">mysql-databases</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-dump-hashes.html">mysql-dump-hashes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-empty-password.html">mysql-empty-password</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-enum.html">mysql-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-info.html">mysql-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-query.html">mysql-query</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-users.html">mysql-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-variables.html">mysql-variables</a>
+	</li>
+
+	<li>
+		<a href="../scripts/mysql-vuln-cve2012-2122.html">mysql-vuln-cve2012-2122</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nat-pmp-info.html">nat-pmp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nat-pmp-mapport.html">nat-pmp-mapport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nbd-info.html">nbd-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nbstat.html">nbstat</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ncp-enum-users.html">ncp-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ncp-serverinfo.html">ncp-serverinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ndmp-fs-info.html">ndmp-fs-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ndmp-version.html">ndmp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nessus-brute.html">nessus-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nessus-xmlrpc-brute.html">nessus-xmlrpc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-auth-bypass.html">netbus-auth-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-brute.html">netbus-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-info.html">netbus-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/netbus-version.html">netbus-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nexpose-brute.html">nexpose-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-ls.html">nfs-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-showmount.html">nfs-showmount</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nfs-statfs.html">nfs-statfs</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nje-node-brute.html">nje-node-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nje-pass-brute.html">nje-pass-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nntp-ntlm-info.html">nntp-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nping-brute.html">nping-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/nrpe-enum.html">nrpe-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ntp-info.html">ntp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ntp-monlist.html">ntp-monlist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omp2-brute.html">omp2-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omp2-enum-targets.html">omp2-enum-targets</a>
+	</li>
+
+	<li>
+		<a href="../scripts/omron-info.html">omron-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openlookup-info.html">openlookup-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openvas-otp-brute.html">openvas-otp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/openwebnet-discovery.html">openwebnet-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-brute.html">oracle-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-brute-stealth.html">oracle-brute-stealth</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-enum-users.html">oracle-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-sid-brute.html">oracle-sid-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/oracle-tns-version.html">oracle-tns-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ovs-agent-version.html">ovs-agent-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/p2p-conficker.html">p2p-conficker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/path-mtu.html">path-mtu</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pcanywhere-brute.html">pcanywhere-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pcworx-info.html">pcworx-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pgsql-brute.html">pgsql-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pjl-ready-message.html">pjl-ready-message</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-brute.html">pop3-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-capabilities.html">pop3-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pop3-ntlm-info.html">pop3-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/pptp-version.html">pptp-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/puppet-naivesigning.html">puppet-naivesigning</a>
+	</li>
+
+	<li>
+		<a href="../scripts/qconn-exec.html">qconn-exec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/qscan.html">qscan</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake1-info.html">quake1-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake3-info.html">quake3-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/quake3-master-getservers.html">quake3-master-getservers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rdp-enum-encryption.html">rdp-enum-encryption</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rdp-vuln-ms12-020.html">rdp-vuln-ms12-020</a>
+	</li>
+
+	<li>
+		<a href="../scripts/realvnc-auth-bypass.html">realvnc-auth-bypass</a>
+	</li>
+
+	<li>
+		<a href="../scripts/redis-brute.html">redis-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/redis-info.html">redis-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/resolveall.html">resolveall</a>
+	</li>
+
+	<li>
+		<a href="../scripts/reverse-index.html">reverse-index</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rexec-brute.html">rexec-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rfc868-time.html">rfc868-time</a>
+	</li>
+
+	<li>
+		<a href="../scripts/riak-http-info.html">riak-http-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rlogin-brute.html">rlogin-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rmi-dumpregistry.html">rmi-dumpregistry</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rmi-vuln-classloader.html">rmi-vuln-classloader</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpc-grind.html">rpc-grind</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcap-brute.html">rpcap-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcap-info.html">rpcap-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rpcinfo.html">rpcinfo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsa-vuln-roca.html">rsa-vuln-roca</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsync-brute.html">rsync-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rsync-list-modules.html">rsync-list-modules</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rtsp-methods.html">rtsp-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rtsp-url-brute.html">rtsp-url-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/rusers.html">rusers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/s7-info.html">s7-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/samba-vuln-cve-2012-1182.html">samba-vuln-cve-2012-1182</a>
+	</li>
+
+	<li>
+		<a href="../scripts/servicetags.html">servicetags</a>
+	</li>
+
+	<li>
+		<a href="../scripts/shodan-api.html">shodan-api</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-brute.html">sip-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-call-spoof.html">sip-call-spoof</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-enum-users.html">sip-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sip-methods.html">sip-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/skypev2-version.html">skypev2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-brute.html">smb-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-double-pulsar-backdoor.html">smb-double-pulsar-backdoor</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-domains.html">smb-enum-domains</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-groups.html">smb-enum-groups</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-processes.html">smb-enum-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-services.html">smb-enum-services</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-sessions.html">smb-enum-sessions</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-shares.html">smb-enum-shares</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-enum-users.html">smb-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-flood.html">smb-flood</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-ls.html">smb-ls</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-mbenum.html">smb-mbenum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-os-discovery.html">smb-os-discovery</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-print-text.html">smb-print-text</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-protocols.html">smb-protocols</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-psexec.html">smb-psexec</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-security-mode.html">smb-security-mode</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-server-stats.html">smb-server-stats</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-system-info.html">smb-system-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-conficker.html">smb-vuln-conficker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-cve-2017-7494.html">smb-vuln-cve-2017-7494</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-cve2009-3103.html">smb-vuln-cve2009-3103</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms06-025.html">smb-vuln-ms06-025</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms07-029.html">smb-vuln-ms07-029</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms08-067.html">smb-vuln-ms08-067</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms10-054.html">smb-vuln-ms10-054</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms10-061.html">smb-vuln-ms10-061</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-ms17-010.html">smb-vuln-ms17-010</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb-vuln-regsvc-dos.html">smb-vuln-regsvc-dos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-capabilities.html">smb2-capabilities</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-security-mode.html">smb2-security-mode</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-time.html">smb2-time</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smb2-vuln-uptime.html">smb2-vuln-uptime</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-brute.html">smtp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-commands.html">smtp-commands</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-enum-users.html">smtp-enum-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-ntlm-info.html">smtp-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-open-relay.html">smtp-open-relay</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-strangeport.html">smtp-strangeport</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2010-4344.html">smtp-vuln-cve2010-4344</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2011-1720.html">smtp-vuln-cve2011-1720</a>
+	</li>
+
+	<li>
+		<a href="../scripts/smtp-vuln-cve2011-1764.html">smtp-vuln-cve2011-1764</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sniffer-detect.html">sniffer-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-brute.html">snmp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-hh3c-logins.html">snmp-hh3c-logins</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-info.html">snmp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-interfaces.html">snmp-interfaces</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-ios-config.html">snmp-ios-config</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-netstat.html">snmp-netstat</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-processes.html">snmp-processes</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-sysdescr.html">snmp-sysdescr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-services.html">snmp-win32-services</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-shares.html">snmp-win32-shares</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-software.html">snmp-win32-software</a>
+	</li>
+
+	<li>
+		<a href="../scripts/snmp-win32-users.html">snmp-win32-users</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-auth-info.html">socks-auth-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-brute.html">socks-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/socks-open-proxy.html">socks-open-proxy</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-auth-methods.html">ssh-auth-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-brute.html">ssh-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-hostkey.html">ssh-hostkey</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-publickey-acceptance.html">ssh-publickey-acceptance</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh-run.html">ssh-run</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssh2-enum-algos.html">ssh2-enum-algos</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sshv1.html">sshv1</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-ccs-injection.html">ssl-ccs-injection</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-cert.html">ssl-cert</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-cert-intaddr.html">ssl-cert-intaddr</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-date.html">ssl-date</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-dh-params.html">ssl-dh-params</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-enum-ciphers.html">ssl-enum-ciphers</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-heartbleed.html">ssl-heartbleed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-known-key.html">ssl-known-key</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ssl-poodle.html">ssl-poodle</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sslv2.html">sslv2</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sslv2-drown.html">sslv2-drown</a>
+	</li>
+
+	<li>
+		<a href="../scripts/sstp-discover.html">sstp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stun-info.html">stun-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stun-version.html">stun-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/stuxnet-detect.html">stuxnet-detect</a>
+	</li>
+
+	<li>
+		<a href="../scripts/supermicro-ipmi-conf.html">supermicro-ipmi-conf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/svn-brute.html">svn-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-asn.html">targets-asn</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-map4to6.html">targets-ipv6-map4to6</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-echo.html">targets-ipv6-multicast-echo</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-invalid-dst.html">targets-ipv6-multicast-invalid-dst</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-mld.html">targets-ipv6-multicast-mld</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-multicast-slaac.html">targets-ipv6-multicast-slaac</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-ipv6-wordlist.html">targets-ipv6-wordlist</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-sniffer.html">targets-sniffer</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-traceroute.html">targets-traceroute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/targets-xml.html">targets-xml</a>
+	</li>
+
+	<li>
+		<a href="../scripts/teamspeak2-version.html">teamspeak2-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-brute.html">telnet-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-encryption.html">telnet-encryption</a>
+	</li>
+
+	<li>
+		<a href="../scripts/telnet-ntlm-info.html">telnet-ntlm-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tftp-enum.html">tftp-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-alpn.html">tls-alpn</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-nextprotoneg.html">tls-nextprotoneg</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tls-ticketbleed.html">tls-ticketbleed</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tn3270-screen.html">tn3270-screen</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tor-consensus-checker.html">tor-consensus-checker</a>
+	</li>
+
+	<li>
+		<a href="../scripts/traceroute-geolocation.html">traceroute-geolocation</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tso-brute.html">tso-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/tso-enum.html">tso-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/unittest.html">unittest</a>
+	</li>
+
+	<li>
+		<a href="../scripts/unusual-port.html">unusual-port</a>
+	</li>
+
+	<li>
+		<a href="../scripts/upnp-info.html">upnp-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/url-snarf.html">url-snarf</a>
+	</li>
+
+	<li>
+		<a href="../scripts/ventrilo-info.html">ventrilo-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/versant-info.html">versant-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vmauthd-brute.html">vmauthd-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vmware-version.html">vmware-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-brute.html">vnc-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-info.html">vnc-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vnc-title.html">vnc-title</a>
+	</li>
+
+	<li>
+		<a href="../scripts/voldemort-info.html">voldemort-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vtam-enum.html">vtam-enum</a>
+	</li>
+
+	<li>
+		<a href="../scripts/vuze-dht-info.html">vuze-dht-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/wdb-version.html">wdb-version</a>
+	</li>
+
+	<li>
+		<a href="../scripts/weblogic-t3-info.html">weblogic-t3-info</a>
+	</li>
+
+	<li>
+		<a href="../scripts/whois-domain.html">whois-domain</a>
+	</li>
+
+	<li>
+		<a href="../scripts/whois-ip.html">whois-ip</a>
+	</li>
+
+	<li>
+		<a href="../scripts/wsdd-discover.html">wsdd-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/x11-access.html">x11-access</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xdmcp-discover.html">xdmcp-discover</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmlrpc-methods.html">xmlrpc-methods</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmpp-brute.html">xmpp-brute</a>
+	</li>
+
+	<li>
+		<a href="../scripts/xmpp-info.html">xmpp-info</a>
+	</li>
+
+</ul>
+
+
+<!-- Module list -->
+
+<h1><span class="jsvisible"><a href="javascript:toggle_contents('libraries')">Libraries <span id="show-libraries" class="showbutton">(show 133)</span><span id="hide-libraries" class="hidebutton">(133)</span></a></span><span class="jsinvisible">Libraries (133)</span></h1>
+<ul id="contents-libraries" class="contents">
+
+	<li>
+		<a href="../lib/afp.html">afp</a>
+	</li>
+
+	<li>
+		<a href="../lib/ajp.html">ajp</a>
+	</li>
+
+	<li>
+		<a href="../lib/amqp.html">amqp</a>
+	</li>
+
+	<li>
+		<a href="../lib/anyconnect.html">anyconnect</a>
+	</li>
+
+	<li>
+		<a href="../lib/asn1.html">asn1</a>
+	</li>
+
+	<li>
+		<a href="../lib/base32.html">base32</a>
+	</li>
+
+	<li>
+		<a href="../lib/base64.html">base64</a>
+	</li>
+
+	<li>
+		<a href="../lib/bin.html">bin</a>
+	</li>
+
+	<li>
+		<a href="../lib/bit.html">bit</a>
+	</li>
+
+	<li>
+		<a href="../lib/bitcoin.html">bitcoin</a>
+	</li>
+
+	<li>
+		<a href="../lib/bits.html">bits</a>
+	</li>
+
+	<li>
+		<a href="../lib/bittorrent.html">bittorrent</a>
+	</li>
+
+	<li>
+		<a href="../lib/bjnp.html">bjnp</a>
+	</li>
+
+	<li>
+		<a href="../lib/brute.html">brute</a>
+	</li>
+
+	<li>
+		<a href="../lib/cassandra.html">cassandra</a>
+	</li>
+
+	<li>
+		<a href="../lib/citrixxml.html">citrixxml</a>
+	</li>
+
+	<li>
+		<a href="../lib/coap.html">coap</a>
+	</li>
+
+	<li>
+		<a href="../lib/comm.html">comm</a>
+	</li>
+
+	<li>
+		<a href="../lib/creds.html">creds</a>
+	</li>
+
+	<li>
+		<a href="../lib/cvs.html">cvs</a>
+	</li>
+
+	<li>
+		<a href="../lib/datafiles.html">datafiles</a>
+	</li>
+
+	<li>
+		<a href="../lib/datetime.html">datetime</a>
+	</li>
+
+	<li>
+		<a href="../lib/dhcp.html">dhcp</a>
+	</li>
+
+	<li>
+		<a href="../lib/dhcp6.html">dhcp6</a>
+	</li>
+
+	<li>
+		<a href="../lib/dns.html">dns</a>
+	</li>
+
+	<li>
+		<a href="../lib/dnsbl.html">dnsbl</a>
+	</li>
+
+	<li>
+		<a href="../lib/dnssd.html">dnssd</a>
+	</li>
+
+	<li>
+		<a href="../lib/drda.html">drda</a>
+	</li>
+
+	<li>
+		<a href="../lib/eap.html">eap</a>
+	</li>
+
+	<li>
+		<a href="../lib/eigrp.html">eigrp</a>
+	</li>
+
+	<li>
+		<a href="../lib/formulas.html">formulas</a>
+	</li>
+
+	<li>
+		<a href="../lib/ftp.html">ftp</a>
+	</li>
+
+	<li>
+		<a href="../lib/geoip.html">geoip</a>
+	</li>
+
+	<li>
+		<a href="../lib/giop.html">giop</a>
+	</li>
+
+	<li>
+		<a href="../lib/gps.html">gps</a>
+	</li>
+
+	<li><strong>http</strong></li>
+	
+	<li>
+		<a href="../lib/httpspider.html">httpspider</a>
+	</li>
+
+	<li>
+		<a href="../lib/iax2.html">iax2</a>
+	</li>
+
+	<li>
+		<a href="../lib/idna.html">idna</a>
+	</li>
+
+	<li>
+		<a href="../lib/ike.html">ike</a>
+	</li>
+
+	<li>
+		<a href="../lib/imap.html">imap</a>
+	</li>
+
+	<li>
+		<a href="../lib/informix.html">informix</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipmi.html">ipmi</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipOps.html">ipOps</a>
+	</li>
+
+	<li>
+		<a href="../lib/ipp.html">ipp</a>
+	</li>
+
+	<li>
+		<a href="../lib/irc.html">irc</a>
+	</li>
+
+	<li>
+		<a href="../lib/iscsi.html">iscsi</a>
+	</li>
+
+	<li>
+		<a href="../lib/isns.html">isns</a>
+	</li>
+
+	<li>
+		<a href="../lib/jdwp.html">jdwp</a>
+	</li>
+
+	<li>
+		<a href="../lib/json.html">json</a>
+	</li>
+
+	<li>
+		<a href="../lib/ldap.html">ldap</a>
+	</li>
+
+	<li>
+		<a href="../lib/lfs.html">lfs</a>
+	</li>
+
+	<li>
+		<a href="../lib/libssh2.html">libssh2</a>
+	</li>
+
+	<li>
+		<a href="../lib/libssh2-utility.html">libssh2-utility</a>
+	</li>
+
+	<li>
+		<a href="../lib/listop.html">listop</a>
+	</li>
+
+	<li>
+		<a href="../lib/lpeg.html">lpeg</a>
+	</li>
+
+	<li>
+		<a href="../lib/lpeg-utility.html">lpeg-utility</a>
+	</li>
+
+	<li>
+		<a href="../lib/ls.html">ls</a>
+	</li>
+
+	<li>
+		<a href="../lib/match.html">match</a>
+	</li>
+
+	<li>
+		<a href="../lib/membase.html">membase</a>
+	</li>
+
+	<li>
+		<a href="../lib/mobileme.html">mobileme</a>
+	</li>
+
+	<li>
+		<a href="../lib/mongodb.html">mongodb</a>
+	</li>
+
+	<li>
+		<a href="../lib/mqtt.html">mqtt</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpc.html">msrpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpcperformance.html">msrpcperformance</a>
+	</li>
+
+	<li>
+		<a href="../lib/msrpctypes.html">msrpctypes</a>
+	</li>
+
+	<li>
+		<a href="../lib/mssql.html">mssql</a>
+	</li>
+
+	<li>
+		<a href="../lib/multicast.html">multicast</a>
+	</li>
+
+	<li>
+		<a href="../lib/mysql.html">mysql</a>
+	</li>
+
+	<li>
+		<a href="../lib/natpmp.html">natpmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/nbd.html">nbd</a>
+	</li>
+
+	<li>
+		<a href="../lib/ncp.html">ncp</a>
+	</li>
+
+	<li>
+		<a href="../lib/ndmp.html">ndmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/netbios.html">netbios</a>
+	</li>
+
+	<li>
+		<a href="../lib/nmap.html">nmap</a>
+	</li>
+
+	<li>
+		<a href="../lib/nrpc.html">nrpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/nsedebug.html">nsedebug</a>
+	</li>
+
+	<li>
+		<a href="../lib/omp2.html">omp2</a>
+	</li>
+
+	<li>
+		<a href="../lib/openssl.html">openssl</a>
+	</li>
+
+	<li>
+		<a href="../lib/ospf.html">ospf</a>
+	</li>
+
+	<li>
+		<a href="../lib/packet.html">packet</a>
+	</li>
+
+	<li>
+		<a href="../lib/pcre.html">pcre</a>
+	</li>
+
+	<li>
+		<a href="../lib/pgsql.html">pgsql</a>
+	</li>
+
+	<li>
+		<a href="../lib/pop3.html">pop3</a>
+	</li>
+
+	<li>
+		<a href="../lib/pppoe.html">pppoe</a>
+	</li>
+
+	<li>
+		<a href="../lib/proxy.html">proxy</a>
+	</li>
+
+	<li>
+		<a href="../lib/punycode.html">punycode</a>
+	</li>
+
+	<li>
+		<a href="../lib/rdp.html">rdp</a>
+	</li>
+
+	<li>
+		<a href="../lib/re.html">re</a>
+	</li>
+
+	<li>
+		<a href="../lib/redis.html">redis</a>
+	</li>
+
+	<li>
+		<a href="../lib/rmi.html">rmi</a>
+	</li>
+
+	<li>
+		<a href="../lib/rpc.html">rpc</a>
+	</li>
+
+	<li>
+		<a href="../lib/rpcap.html">rpcap</a>
+	</li>
+
+	<li>
+		<a href="../lib/rsync.html">rsync</a>
+	</li>
+
+	<li>
+		<a href="../lib/rtsp.html">rtsp</a>
+	</li>
+
+	<li>
+		<a href="../lib/sasl.html">sasl</a>
+	</li>
+
+	<li>
+		<a href="../lib/shortport.html">shortport</a>
+	</li>
+
+	<li>
+		<a href="../lib/sip.html">sip</a>
+	</li>
+
+	<li>
+		<a href="../lib/slaxml.html">slaxml</a>
+	</li>
+
+	<li>
+		<a href="../lib/smb.html">smb</a>
+	</li>
+
+	<li>
+		<a href="../lib/smb2.html">smb2</a>
+	</li>
+
+	<li>
+		<a href="../lib/smbauth.html">smbauth</a>
+	</li>
+
+	<li>
+		<a href="../lib/smtp.html">smtp</a>
+	</li>
+
+	<li>
+		<a href="../lib/snmp.html">snmp</a>
+	</li>
+
+	<li>
+		<a href="../lib/socks.html">socks</a>
+	</li>
+
+	<li>
+		<a href="../lib/srvloc.html">srvloc</a>
+	</li>
+
+	<li>
+		<a href="../lib/ssh1.html">ssh1</a>
+	</li>
+
+	<li>
+		<a href="../lib/ssh2.html">ssh2</a>
+	</li>
+
+	<li>
+		<a href="../lib/sslcert.html">sslcert</a>
+	</li>
+
+	<li>
+		<a href="../lib/sslv2.html">sslv2</a>
+	</li>
+
+	<li>
+		<a href="../lib/stdnse.html">stdnse</a>
+	</li>
+
+	<li>
+		<a href="../lib/strbuf.html">strbuf</a>
+	</li>
+
+	<li>
+		<a href="../lib/strict.html">strict</a>
+	</li>
+
+	<li>
+		<a href="../lib/stun.html">stun</a>
+	</li>
+
+	<li>
+		<a href="../lib/tab.html">tab</a>
+	</li>
+
+	<li>
+		<a href="../lib/target.html">target</a>
+	</li>
+
+	<li>
+		<a href="../lib/tftp.html">tftp</a>
+	</li>
+
+	<li>
+		<a href="../lib/tls.html">tls</a>
+	</li>
+
+	<li>
+		<a href="../lib/tn3270.html">tn3270</a>
+	</li>
+
+	<li>
+		<a href="../lib/tns.html">tns</a>
+	</li>
+
+	<li>
+		<a href="../lib/unicode.html">unicode</a>
+	</li>
+
+	<li>
+		<a href="../lib/unittest.html">unittest</a>
+	</li>
+
+	<li>
+		<a href="../lib/unpwdb.html">unpwdb</a>
+	</li>
+
+	<li>
+		<a href="../lib/upnp.html">upnp</a>
+	</li>
+
+	<li>
+		<a href="../lib/url.html">url</a>
+	</li>
+
+	<li>
+		<a href="../lib/versant.html">versant</a>
+	</li>
+
+	<li>
+		<a href="../lib/vnc.html">vnc</a>
+	</li>
+
+	<li>
+		<a href="../lib/vulns.html">vulns</a>
+	</li>
+
+	<li>
+		<a href="../lib/vuzedht.html">vuzedht</a>
+	</li>
+
+	<li>
+		<a href="../lib/wsdd.html">wsdd</a>
+	</li>
+
+	<li>
+		<a href="../lib/xdmcp.html">xdmcp</a>
+	</li>
+
+	<li>
+		<a href="../lib/xmpp.html">xmpp</a>
+	</li>
+
+	<li>
+		<a href="../lib/zlib.html">zlib</a>
+	</li>
+
+</ul>
+
+
+
+
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Library <code>http</code></h1>
+
+<p>
+Implements the HTTP client protocol in a standard form that Nmap scripts can
+take advantage of.
+</p>
+<p>
+Because HTTP has so many uses, there are a number of interfaces to this
+library.
+</p>
+<p>
+The most obvious and common ones are simply <code>get</code>,
+<code>post</code>, and <code>head</code>; or, if more control is required,
+<code>generic_request</code> can be used. These functions take host and port
+as their main parameters and they do what one would expect. The
+<code>get_url</code> helper function can be used to parse and retrieve a full
+URL.
+</p>
+<p>
+HTTPS support is transparent. The library uses <code>comm.tryssl</code> to
+determine whether SSL is required for a request.
+</p>
+<p>
+These functions return a table of values, including:
+<ul>
+<li><code>status-line</code> - A string representing the status, such as "HTTP/1.1 200 OK", followed by a newline. In case of an error, a description will be provided in this line.
+</li>
+<li><code>status</code> - The HTTP status value; for example, "200". If an error occurs during a request, then this value is going to be nil.
+</li>
+<li><code>version</code> - HTTP protocol version string, as stated in the status line. Example: "1.1"
+</li>
+<li><code>header</code> - An associative array representing the header. Keys are all lowercase, and standard headers, such as 'date', 'content-length', etc. will typically be present.
+</li>
+<li><code>rawheader</code> - A numbered array of the headers, exactly as the server sent them. While header['content-type'] might be 'text/html', rawheader[3] might be 'Content-type: text/html'.
+</li>
+<li><code>cookies</code> - A numbered array of the cookies the server sent. Each cookie is a table with the expected keys, such as <code>name</code>, <code>value</code>, <code>path</code>, <code>domain</code>, and <code>expires</code>. This table can be sent to the server in subsequent responses in the <code>options</code> table to any function (see below).
+</li>
+<li><code>body</code> - The full body, as returned by the server. Chunked encoding is handled transparently.
+</li>
+<li><code>fragment</code> - Partially received body (if any), in case of an error.
+</li>
+<li><code>location</code> - A numbered array of the locations of redirects that were followed.
+</li>
+</ul>
+</p>
+<p>
+Many of the functions optionally allow an "options" input table, which can
+modify the HTTP request or its processing in many ways like adding headers or
+setting the timeout. The following are valid keys in "options"
+(note: not all options will necessarily affect every function):
+<ul>
+<li><code>timeout</code>: A timeout used for socket operations.
+</li>
+<li><code>header</code>: A table containing additional headers to be used for the request. For example, <code>options['header']['Content-Type'] = 'text/xml'</code>
+</li>
+<li><code>content</code>: The content of the message. This can be either a string, which will be directly added as the body of the message, or a table, which will have each key=value pair added (like a normal POST request). (A corresponding Content-Length header will be added automatically. Set header['Content-Length'] to override it).
+</li>
+<li><code>cookies</code>: A list of cookies as either a string, which will be directly sent, or a table. If it's a table, the following fields are recognized: <code>name</code>, <code>value</code> and <code>path</code>. Only <code>name</code> and <code>value</code> fields are required.
+</li>
+<li><code>auth</code>: A table containing the keys <code>username</code> and <code>password</code>, which will be used for HTTP Basic authentication.
+If a server requires HTTP Digest authentication, then there must also be a key <code>digest</code>, with value <code>true</code>.
+If a server requires NTLM authentication, then there must also be a key <code>ntlm</code>, with value <code>true</code>.
+</li>
+<li><code>bypass_cache</code>: Do not perform a lookup in the local HTTP cache.
+</li>
+<li><code>no_cache</code>: Do not save the result of this request to the local HTTP cache.
+</li>
+<li><code>no_cache_body</code>: Do not save the body of the response to the local HTTP cache.
+</li>
+<li><code>any_af</code>: Allow connecting to any address family, inet or inet6. By default, these functions will only use the same AF as nmap.address_family to resolve names. (This option is a straight pass-thru to <code>comm.lua</code> functions.)
+</li>
+<li><code>redirect_ok</code>: Closure that overrides the default redirect_ok used to validate whether to follow HTTP redirects or not. False, if no HTTP redirects should be followed. Alternatively, a number may be passed to change the number of redirects to follow.
+The following example shows how to write a custom closure that follows 5 consecutive redirects, without the safety checks in the default redirect_ok:
+<pre>  redirect_ok = function(host,port)
+    local c = 5
+    return function(url)
+      if ( c==0 ) then return false end
+      c = c - 1
+      return true
+    end
+  end
+  </pre>
+</li>
+</ul>
+</p>
+<p>
+If a script is planning on making a lot of requests, the pipelining functions
+can be helpful. <code>pipeline_add</code> queues requests in a table, and
+<code>pipeline_go</code> performs the requests, returning the results as an
+array, with the responses in the same order as the requests were added.
+As a simple example:
+<pre> -- Start by defining the 'all' variable as nil
+ local all = nil
+
+ -- Add two GET requests and one HEAD to the queue but these requests are
+ -- not performed yet. The second parameter represents the "options" table
+ -- (which we don't need in this example).
+ all = http.pipeline_add('/book',    nil, all)
+ all = http.pipeline_add('/test',    nil, all)
+ all = http.pipeline_add('/monkeys', nil, all, 'HEAD')
+
+ -- Perform all three requests as parallel as Nmap is able to
+ local results = http.pipeline_go('nmap.org', 80, all)</pre>
+</p>
+<p>
+At this point, <code>results</code> is an array with three elements.
+Each element is a table containing the HTTP result, as discussed above.
+</p>
+<p>
+One more interface provided by the HTTP library helps scripts determine
+whether or not a page exists. The <code>identify_404</code> function will
+try several URLs on the server to determine what the server's 404 pages look
+like. It will attempt to identify customized 404 pages that may not return
+the actual status code 404. If successful, the function
+<code>page_exists</code> can then be used to determine whether or not a page
+exists.
+</p>
+<p>
+Some other miscellaneous functions that can come in handy are
+<code>response_contains</code>, <code>can_use_head</code>, and
+<code>save_path</code>. See the appropriate documentation for details.</p>
+
+
+
+
+
+
+<p>
+Source: <a href="https://svn.nmap.org/nmap/nselib/http.lua">https://svn.nmap.org/nmap/nselib/http.lua</a>
+</p>
+
+
+
+<h2 id="script-args">Script Arguments</h2>
+  <p>
+    
+      <h4> http.useragent </h4>
+      <p>
+The value of the User-Agent header field sent with
+requests. By default it is
+<code>"Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html)"</code>.
+A value of the empty string disables sending the User-Agent header field.</p>
+
+    
+      <h4> http.max-cache-size </h4>
+      <p>
+The maximum memory size (in bytes) of the cache.</p>
+
+    
+      <h4> http.max-pipeline </h4>
+      <p>
+If set, it represents the number of outstanding  HTTP requests
+that should be pipelined. Defaults to <code>http.pipeline</code> (if set), or to what
+<code>getPipelineMax</code> function returns.
+</p>
+<p>
+TODO
+Implement cache system for http pipelines</p>
+
+    
+      <h4> http.pipeline </h4>
+      <p>
+If set, it represents the number of HTTP requests that'll be
+sent on one connection. This can be set low to make debugging easier, or it
+can be set high to test how a server reacts (its chosen max is ignored).</p>
+
+    
+  </p>
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+       <td class="name" nowrap><a href="#can_use_head">can_use_head</a>&nbsp;(host, port, result_404, path)</td>
+       <td class="summary">
+      <p>
+Determine whether or not the server supports HEAD.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#clean_404">clean_404</a>&nbsp;(body)</td>
+       <td class="summary">
+      <p>
+Try to remove anything that might change within a 404.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#generic_request">generic_request</a>&nbsp;(host, port, method, path, options)</td>
+       <td class="summary">
+      <p>
+Do a single request with a given method. The response is returned as the standard
+response table (see the module documentation).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get">get</a>&nbsp;(host, port, path, options)</td>
+       <td class="summary">
+      <p>
+Fetches a resource with a GET request and returns the result as a table.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_status_string">get_status_string</a>&nbsp;(data)</td>
+       <td class="summary">
+      <p>
+Take the data returned from a HTTP request and return the status string.
+Useful for <code>stdnse.debug</code> messages and even advanced output.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#get_url">get_url</a>&nbsp;(u, options)</td>
+       <td class="summary">
+      <p>
+Parses a URL and calls <code>http.get</code> with the result. The URL can contain
+all the standard fields, protocol://host:port/path</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#grab_forms">grab_forms</a>&nbsp;(body)</td>
+       <td class="summary">
+      <p>
+Finds forms in html code</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#head">head</a>&nbsp;(host, port, path, options)</td>
+       <td class="summary">
+      <p>
+Fetches a resource with a HEAD request.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#identify_404">identify_404</a>&nbsp;(host, port)</td>
+       <td class="summary">
+      <p>
+Try requesting a non-existent file to determine how the server responds to
+unknown pages ("404 pages")</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#page_exists">page_exists</a>&nbsp;(data, result_404, known_404, page, displayall)</td>
+       <td class="summary">
+      <p>
+Determine whether or not the page that was returned is a 404 page.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#parse_date">parse_date</a>&nbsp;(s)</td>
+       <td class="summary">
+      <p>
+Parses an HTTP date string</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#parse_form">parse_form</a>&nbsp;(form)</td>
+       <td class="summary">
+      <p>
+Parses a form, that is, finds its action and fields.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#parse_redirect">parse_redirect</a>&nbsp;(host, port, path, response)</td>
+       <td class="summary">
+      <p>
+Handles a HTTP redirect</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#parse_www_authenticate">parse_www_authenticate</a>&nbsp;(s)</td>
+       <td class="summary">
+      <p>
+Parses the WWW-Authenticate header as described in RFC 2616, section 14.47
+and RFC 2617, section 1.2.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#pipeline_add">pipeline_add</a>&nbsp;(path, options, all_requests, method)</td>
+       <td class="summary">
+      <p>
+Adds a pending request to the HTTP pipeline.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#pipeline_go">pipeline_go</a>&nbsp;(host, port, all_requests)</td>
+       <td class="summary">
+      <p>
+Performs all queued requests in the all_requests variable (created by the
+<code>pipeline_add</code> function).</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#post">post</a>&nbsp;(host, port, path, options, ignored, postdata)</td>
+       <td class="summary">
+      <p>
+Fetches a resource with a POST request.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#put">put</a>&nbsp;(host, port, path, options, putdata)</td>
+       <td class="summary">
+      <p>
+Uploads a file using the PUT method and returns a result table. This is a simple wrapper
+around <code>generic_request</code></p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#redirect_ok">redirect_ok</a>&nbsp;(host, port, counter)</td>
+       <td class="summary">
+      <p>
+Provides the default behavior for HTTP redirects.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#response_contains">response_contains</a>&nbsp;(response, pattern, case_sensitive)</td>
+       <td class="summary">
+      <p>
+Check if the response variable contains the given text.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#save_path">save_path</a>&nbsp;(host, port, path, status, links_to, linked_from, contenttype)</td>
+       <td class="summary">
+      <p>
+This function should be called whenever a valid path (a path that doesn't
+contain a known 404 page) is discovered.</p>
+
+    </td>
+	</tr>
+
+	<tr>
+       <td class="name" nowrap><a href="#tag_pattern">tag_pattern</a>&nbsp;(tag, endtag)</td>
+       <td class="summary">
+      <p>
+Create a pattern to find a tag</p>
+
+    </td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="can_use_head"></a><strong>can_use_head</strong>&nbsp;(host, port, result_404, path)</dt>
+<dd>
+
+<p>
+Determine whether or not the server supports HEAD.
+</p>
+<p>
+Tests by requesting / and verifying that it returns 200, and doesn't return
+data. We implement the check like this because can't always rely on OPTIONS
+to tell the truth.
+</p>
+<p>
+Note: If <code>identify_404</code> returns a 200 status, HEAD requests
+should be disabled. Sometimes, servers use a 200 status code with a message
+explaining that the page wasn't found. In this case, to actually identify
+a 404 page, we need the full body that a HEAD request doesn't supply.
+This is determined automatically if the <code>result_404</code> field is
+set.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to use.
+          
+	</li>
+	
+	<li>
+	  result_404:
+          
+            [optional] The result when an unknown page is requested.
+                  This is returned by <code>identify_404</code>. If the 404
+                  page returns a 200 code, then we disable HEAD requests.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to request; by default, / is used.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>A boolean value: true if HEAD is usable, false otherwise.</li>
+	
+	<li>If HEAD is usable, the result of the HEAD request is returned (so
+        potentially, a script can avoid an extra call to HEAD)</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="clean_404"></a><strong>clean_404</strong>&nbsp;(body)</dt>
+<dd>
+
+<p>
+Try to remove anything that might change within a 404.
+</p>
+<p>
+For example:
+<ul>
+<li>A file path (includes URI)
+</li>
+<li>A time
+</li>
+<li>A date
+</li>
+<li>An execution time (numbers in general, really)
+</li>
+</ul>
+</p>
+<p>
+The intention is that two 404 pages from different URIs and taken hours
+apart should, whenever possible, look the same.
+</p>
+<p>
+During this function, we're likely going to over-trim things. This is fine
+-- we want enough to match on that it'll a) be unique, and b) have the best
+chance of not changing. Even if we remove bits and pieces from the file, as
+long as it isn't a significant amount, it'll remain unique.
+</p>
+<p>
+One case this doesn't cover is if the server generates a random haiku for
+the user.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  body:
+          
+            The body of the page.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="generic_request"></a><strong>generic_request</strong>&nbsp;(host, port, method, path, options)</dt>
+<dd>
+
+<p>
+Do a single request with a given method. The response is returned as the standard
+response table (see the module documentation).
+</p>
+<p>
+The <code>get</code>, <code>head</code>, and <code>post</code> functions are simple
+wrappers around <code>generic_request</code>.
+</p>
+<p>
+Any 1XX (informational) responses are discarded.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  method:
+          
+            The method to use; for example, 'GET', 'HEAD', etc.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket timeouts, HTTP headers, and other parameters. For full documentation, see the module documentation (above).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="">
+		request
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="get"></a><strong>get</strong>&nbsp;(host, port, path, options)</dt>
+<dd>
+
+<p>
+Fetches a resource with a GET request and returns the result as a table.
+</p>
+<p>
+This is a simple wrapper around <code>generic_request</code>, with the added
+benefit of having local caching and support for HTTP redirects. Redirects
+are followed only if they pass all the validation rules of the redirect_ok
+function. This function may be overridden by supplying a custom function in
+the <code>redirect_ok</code> field of the options array. The default
+function redirects the request if the destination is:
+<ul>
+<li>Within the same host or domain
+</li>
+<li>Has the same port number
+</li>
+<li>Stays within the current scheme
+</li>
+<li>Does not exceed <code>MAX_REDIRECT_COUNT</code> count of redirects
+</li>
+</ul>
+</p>
+<p>
+Caching and redirects can be controlled in the <code>options</code> array,
+see module documentation for more information.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket
+               timeouts, HTTP headers, and other parameters. For full
+               documentation, see the module documentation (above).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#generic_request">
+		http.generic_request
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="get_status_string"></a><strong>get_status_string</strong>&nbsp;(data)</dt>
+<dd>
+
+<p>
+Take the data returned from a HTTP request and return the status string.
+Useful for <code>stdnse.debug</code> messages and even advanced output.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  data:
+          
+            The response table from any HTTP request
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+The best status string we could find: either the actual status string, the status code, or <code>"&lt;unknown status&gt;"</code>.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="get_url"></a><strong>get_url</strong>&nbsp;(u, options)</dt>
+<dd>
+
+<p>
+Parses a URL and calls <code>http.get</code> with the result. The URL can contain
+all the standard fields, protocol://host:port/path</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  u:
+          
+            The URL of the host.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket timeouts, HTTP headers, and other parameters. For full documentation, see the module documentation (above).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#get">
+		http.get
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="grab_forms"></a><strong>grab_forms</strong>&nbsp;(body)</dt>
+<dd>
+
+<p>
+Finds forms in html code
+</p>
+<p>
+returns table of found forms, in plaintext.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  body:
+          
+            A <code>response.body</code> in which to search for forms
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A list of forms.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="head"></a><strong>head</strong>&nbsp;(host, port, path, options)</dt>
+<dd>
+
+<p>
+Fetches a resource with a HEAD request.
+</p>
+<p>
+Like <code>get</code>, this is a simple wrapper around
+<code>generic_request</code> with response caching. This function also has
+support for HTTP redirects. Redirects are followed only if they pass all the
+validation rules of the redirect_ok function. This function may be
+overridden by supplying a custom function in the <code>redirect_ok</code>
+field of the options array. The default function redirects the request if
+the destination is:
+<ul>
+<li>Within the same host or domain
+</li>
+<li>Has the same port number
+</li>
+<li>Stays within the current scheme
+</li>
+<li>Does not exceed <code>MAX_REDIRECT_COUNT</code> count of redirects
+</li>
+</ul>
+</p>
+<p>
+Caching and redirects can be controlled in the <code>options</code> array,
+see module documentation for more information.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket
+               timeouts, HTTP headers, and other parameters. For full
+               documentation, see the module documentation (above).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#generic_request">
+		http.generic_request
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="identify_404"></a><strong>identify_404</strong>&nbsp;(host, port)</dt>
+<dd>
+
+<p>
+Try requesting a non-existent file to determine how the server responds to
+unknown pages ("404 pages")
+</p>
+<p>
+This tells us
+<ul>
+<li>what to expect when a non-existent page is requested, and
+</li>
+<li>if the server will be impossible to scan.
+</li>
+</ul>
+</p>
+<p>
+If the server responds with a 404 status code, as it is supposed to, then
+this function simply returns 404. If it contains one of a series of common
+status codes, including unauthorized, moved, and others, it is returned like
+a 404.
+</p>
+<p>
+I (Ron Bowes) have observed one host that responds differently for three
+scenarios:
+<ul>
+<li>A non-existent page, all lowercase (a login page)
+</li>
+<li>A non-existent page, with uppercase (a weird error page that says,
+"Filesystem is corrupt.")
+</li>
+<li>A page in a non-existent directory (a login page with different font
+colours)
+</li>
+</ul>
+</p>
+<p>
+As a result, I've devised three different 404 tests, one to check each of
+these conditions. They all have to match, the tests can proceed; if any of
+them are different, we can't check 404s properly.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host object.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to which we are establishing the connection.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>status Did we succeed?</li>
+	
+	<li>result If status is false, result is an error message. Otherwise,
+               it's the code to expect (typically, but not necessarily,
+               '404').</li>
+	
+	<li>body Body is a hash of the cleaned-up body that can be used when
+             detecting a 404 page that doesn't return a 404 error code.</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="page_exists"></a><strong>page_exists</strong>&nbsp;(data, result_404, known_404, page, displayall)</dt>
+<dd>
+
+<p>
+Determine whether or not the page that was returned is a 404 page.
+</p>
+<p>
+This is actually a pretty simple function, but it's best to keep this logic
+close to <code>identify_404</code>, since they will generally be used
+together.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  data:
+          
+            The data returned by the HTTP request
+          
+	</li>
+	
+	<li>
+	  result_404:
+          
+            The status code to expect for non-existent pages. This is
+                  returned by <code>identify_404</code>.
+          
+	</li>
+	
+	<li>
+	  known_404:
+          
+            The 404 page itself, if <code>result_404</code> is 200. If
+                 <code>result_404</code> is something else, this parameter
+                 is ignored and can be set to <code>nil</code>. This is
+                 returned by <code>identify_404</code>.
+          
+	</li>
+	
+	<li>
+	  page:
+          
+            The page being requested (used in error messages).
+          
+	</li>
+	
+	<li>
+	  displayall:
+          
+            [optional] If set to true, don't exclude non-404 errors
+                  (such as 500).
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A boolean value: true if the page appears to exist, and false if it
+        does not.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="parse_date"></a><strong>parse_date</strong>&nbsp;(s)</dt>
+<dd>
+
+<p>
+Parses an HTTP date string
+</p>
+<p>
+Supports any of the following formats from section 3.3.1 of RFC 2616:
+<ul>
+<li>Sun, 06 Nov 1994 08:49:37 GMT  (RFC 822, updated by RFC 1123)
+</li>
+<li>Sunday, 06-Nov-94 08:49:37 GMT (RFC 850, obsoleted by RFC 1036)
+</li>
+<li>Sun Nov  6 08:49:37 1994       (ANSI C's <code>asctime()</code> format)</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  s:
+          
+            the date string.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+a table with keys <code>year</code>, <code>month</code>,
+<code>day</code>, <code>hour</code>, <code>min</code>, <code>sec</code>, and
+<code>isdst</code>, relative to GMT, suitable for input to
+<code>os.time</code>.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="parse_form"></a><strong>parse_form</strong>&nbsp;(form)</dt>
+<dd>
+
+<p>
+Parses a form, that is, finds its action and fields.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  form:
+          
+            A plaintext representation of form
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A dictionary with keys: <code>action</code>,
+<code>method</code> if one is specified, <code>fields</code>
+which is a list of fields found in the form each of which has a
+<code>name</code> attribute and <code>type</code> if specified.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="parse_redirect"></a><strong>parse_redirect</strong>&nbsp;(host, port, path, response)</dt>
+<dd>
+
+<p>
+Handles a HTTP redirect</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            table as received by the script action function
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            table as received by the script action function
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            string
+          
+	</li>
+	
+	<li>
+	  response:
+          
+            table as returned by http.get or http.head
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+url table as returned by <code>url.parse</code> or nil if there's no
+        redirect taking place
+
+
+
+</dd>
+
+
+
+
+<dt><a name="parse_www_authenticate"></a><strong>parse_www_authenticate</strong>&nbsp;(s)</dt>
+<dd>
+
+<p>
+Parses the WWW-Authenticate header as described in RFC 2616, section 14.47
+and RFC 2617, section 1.2.
+</p>
+<p>
+The return value is an array of challenges. Each challenge is a table with
+the keys <code>scheme</code> and <code>params</code>.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  s:
+          
+            The header value text.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+An array of challenges, or <code>nil</code> on error.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="pipeline_add"></a><strong>pipeline_add</strong>&nbsp;(path, options, all_requests, method)</dt>
+<dd>
+
+<p>
+Adds a pending request to the HTTP pipeline.
+</p>
+<p>
+The HTTP pipeline is a set of requests that will all be sent at the same
+time, or as close as the server allows. This allows more efficient code,
+since requests are automatically buffered and sent simultaneously.
+</p>
+<p>
+The <code>all_requests</code> argument contains the current list of queued
+requests (if this is the first time calling <code>pipeline_add</code>, it
+should be <code>nil</code>). After adding the request to end of the queue,
+the queue is returned and can be passed to the next
+<code>pipeline_add</code> call.
+</p>
+<p>
+When all requests have been queued, call <code>pipeline_go</code> with the
+all_requests table that has been built.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket
+               timeouts, HTTP headers, and other parameters. For full
+               documentation, see the module documentation (above).
+          
+	</li>
+	
+	<li>
+	  all_requests:
+          
+            [optional] The current pipeline queue (returned from a
+                    previous <code>add_pipeline</code> call), or nil if it's
+                    the first call.
+          
+	</li>
+	
+	<li>
+	  method:
+          
+            [optional] The HTTP method ('GET', 'HEAD', 'POST', etc).
+                         Default: 'GET'.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+Table with the pipeline requests (plus this new one)
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#pipeline_go">
+		http.pipeline_go
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="pipeline_go"></a><strong>pipeline_go</strong>&nbsp;(host, port, all_requests)</dt>
+<dd>
+
+<p>
+Performs all queued requests in the all_requests variable (created by the
+<code>pipeline_add</code> function).
+</p>
+<p>
+Returns an array of responses, each of which is a table as defined in the
+module documentation above.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  all_requests:
+          
+            A table with all the previously built pipeline requests
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A list of responses, in the same order as the requests were queued.
+        Each response is a table as described in the module documentation.
+        The response list may be either nil or shorter than expected (up to
+        and including being completely empty) due to communication issues.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="post"></a><strong>post</strong>&nbsp;(host, port, path, options, ignored, postdata)</dt>
+<dd>
+
+<p>
+Fetches a resource with a POST request.
+</p>
+<p>
+Like <code>get</code>, this is a simple wrapper around
+<code>generic_request</code> except that postdata is handled properly.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket
+               timeouts, HTTP headers, and other parameters. For full
+               documentation, see the module documentation (above).
+          
+	</li>
+	
+	<li>
+	  ignored:
+          
+            Ignored for backwards compatibility.
+          
+	</li>
+	
+	<li>
+	  postdata:
+          
+            A string or a table of data to be posted. If a table, the
+                keys and values must be strings, and they will be encoded
+                into an application/x-www-form-encoded form submission.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#generic_request">
+		http.generic_request
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="put"></a><strong>put</strong>&nbsp;(host, port, path, options, putdata)</dt>
+<dd>
+
+<p>
+Uploads a file using the PUT method and returns a result table. This is a simple wrapper
+around <code>generic_request</code></p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host to connect to.
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port to connect to.
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path to retrieve.
+          
+	</li>
+	
+	<li>
+	  options:
+          
+            [optional] A table that lets the caller control socket timeouts, HTTP headers, and other parameters. For full documentation, see the module documentation (above).
+          
+	</li>
+	
+	<li>
+	  putdata:
+          
+            The contents of the file to upload
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A response table, see module documentation for description.
+
+
+
+<h3>See also:</h3>
+<ul>
+	
+	<li><a href="../lib/http.html#generic_request">
+		http.generic_request
+	</a>
+	
+</ul>
+
+</dd>
+
+
+
+
+<dt><a name="redirect_ok"></a><strong>redirect_ok</strong>&nbsp;(host, port, counter)</dt>
+<dd>
+
+<p>
+Provides the default behavior for HTTP redirects.
+</p>
+<p>
+Redirects will be followed unless they:
+<ul>
+<li>contain credentials
+</li>
+<li>are on a different domain or host
+</li>
+<li>have a different port number or URI scheme
+</li>
+<li>redirect to the same URI
+</li>
+<li>exceed the maximum number of redirects specified</li>
+</ul>
+</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            table as received by the action function
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            table as received by the action function
+          
+	</li>
+	
+	<li>
+	  counter:
+          
+            number of redirects to follow.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+a default closure suitable for option "redirect_ok"
+
+
+
+</dd>
+
+
+
+
+<dt><a name="response_contains"></a><strong>response_contains</strong>&nbsp;(response, pattern, case_sensitive)</dt>
+<dd>
+
+<p>
+Check if the response variable contains the given text.
+</p>
+<p>
+Response variable could be a return from a http.get, http.post,
+http.pipeline_go, etc. The text can be:
+<ul>
+<li>Part of a header ('content-type', 'text/html', '200 OK', etc)
+</li>
+<li>An entire header ('Content-type: text/html', 'Content-length: 123', etc)
+</li>
+<li>Part of the body
+</li>
+</ul>
+</p>
+<p>
+The search text is treated as a Lua pattern.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  response:
+          
+            The full response table from a HTTP request.
+          
+	</li>
+	
+	<li>
+	  pattern:
+          
+            The pattern we're searching for. Don't forget to escape '-',
+              for example, 'Content%-type'. The pattern can also contain
+              captures, like 'abc(.*)def', which will be returned if
+              successful.
+          
+	</li>
+	
+	<li>
+	  case_sensitive:
+          
+            [optional] Set to <code>true</code> for case-sensitive
+                     searches. Default: not case sensitive.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return values:</h3>
+<ol>
+	
+	<li>result True if the string matched, false otherwise</li>
+	
+	<li>matches An array of captures from the match, if any</li>
+	
+</ol>
+
+
+
+</dd>
+
+
+
+
+<dt><a name="save_path"></a><strong>save_path</strong>&nbsp;(host, port, path, status, links_to, linked_from, contenttype)</dt>
+<dd>
+
+<p>
+This function should be called whenever a valid path (a path that doesn't
+contain a known 404 page) is discovered.
+</p>
+<p>
+It will add the path to the registry in several ways, allowing other scripts
+to take advantage of it in interesting ways.</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  host:
+          
+            The host the path was discovered on (not necessarily the host
+           being scanned).
+          
+	</li>
+	
+	<li>
+	  port:
+          
+            The port the path was discovered on (not necessarily the port
+           being scanned).
+          
+	</li>
+	
+	<li>
+	  path:
+          
+            The path discovered. Calling this more than once with the same
+           path is okay; it'll update the data as much as possible instead
+           of adding a duplicate entry
+          
+	</li>
+	
+	<li>
+	  status:
+          
+            [optional] The status code (200, 404, 500, etc). This can be
+             left off if it isn't known.
+          
+	</li>
+	
+	<li>
+	  links_to:
+          
+            [optional] A table of paths that this page links to.
+          
+	</li>
+	
+	<li>
+	  linked_from:
+          
+            [optional] A table of paths that link to this page.
+          
+	</li>
+	
+	<li>
+	  contenttype:
+          
+            [optional] The content-type value for the path, if it's known.
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+<dt><a name="tag_pattern"></a><strong>tag_pattern</strong>&nbsp;(tag, endtag)</dt>
+<dd>
+
+<p>
+Create a pattern to find a tag
+</p>
+<p>
+Case-insensitive search for tags</p>
+
+
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  tag:
+          
+            The name of the tag to find
+          
+	</li>
+	
+	<li>
+	  endtag:
+          
+            Boolean true if you are looking for an end tag, otherwise it will look for a start tag
+          
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+A pattern to find the tag
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+</div> <!-- id="container" -->	
+
+
+<h2 class="purpleheader">Nmap Site Navigation</h2>
+
+<CENTER>
+<!--#include virtual="/shared/templates/nmap_pagemap.html" -->
+</CENTER>
+<!--#include virtual="/shared/templates/standard_body_bottom.html" -->
